@@ -293,11 +293,14 @@ ul.takeaway li{margin-top:8px;word-break:keep-all}
 }
 
 /* =========================================================================
-   thanks (문의 완료)
+   thanks (문의 완료) · 404 — 공용 센터 페이지
    ========================================================================= */
-.p-thanks main{padding:130px 24px;text-align:center}
-.p-thanks p{margin:16px 0 0;color:var(--text-2);font-size:var(--fs-body)}
-.p-thanks .btn{margin-top:48px}
+.p-thanks main,.p-404 main{padding:130px 24px;text-align:center}
+.p-thanks p,.p-404 p{margin:16px 0 0;color:var(--text-2);font-size:var(--fs-body)}
+.p-thanks .btn,.p-404 .btn{margin-top:48px}
+.p-404 h1{font-size:clamp(26px,4.5vw,40px);font-weight:700;letter-spacing:-.04em;margin:0;word-break:keep-all}
+.p-404 .code{font-family:var(--font-mono);color:var(--accent);font-size:var(--fs-sm);letter-spacing:.1em;margin:0 0 16px}
+.p-404 .sub-link{display:inline-block;margin:24px 0 0 24px;font-size:var(--fs-sm);font-weight:600;color:var(--ink);text-decoration:none}
 
 /* =========================================================================
    푸터
