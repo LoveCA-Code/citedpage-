@@ -22,55 +22,9 @@
   </script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
-  <style>
-    *{box-sizing:border-box}
-    body{margin:0;font-family:'Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;color:#0f0f0f;background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased}
-    a{color:#2340ff}
-    .container{max-width:1080px;margin:0 auto}
-    .site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(4px);border-bottom:1px solid #111}
-    .site-header .container{padding:15px 40px;display:flex;justify-content:space-between;align-items:center}
-    .logo{font-size:17px;font-weight:700;letter-spacing:-.02em;color:#0f0f0f;text-decoration:none}
-    .nav{display:flex;gap:32px;align-items:center}
-    .nav a{color:#0f0f0f;text-decoration:none;font-size:13px;font-weight:600}
-    .nav .cta{border-bottom:2px solid #2340ff;padding-bottom:2px}
-    .band{border-bottom:1px solid #111}
-    .rail-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:150px 1fr}
-    .rail{border-right:1px solid #e6e6e6;padding:96px 0 0 40px;font-size:12px;color:#999;letter-spacing:.05em}
-    .rail-body{padding:96px 40px 92px}
-    h1{font-size:clamp(30px,4.6vw,46px);font-weight:700;line-height:1.2;letter-spacing:-.04em;word-break:keep-all;margin:0;max-width:760px}
-    .accent{color:#2340ff}
-    .lede{margin:26px 0 0;font-size:16.5px;color:#565656;max-width:540px;word-break:keep-all;line-height:1.65}
-    .postrow{display:grid;grid-template-columns:150px 1fr;text-decoration:none;color:inherit;border-bottom:1px solid #e6e6e6}
-    a.postrow:hover{background:#fafafa}
-    .postmeta{border-right:1px solid #e6e6e6;padding:40px 0 40px 40px;font-size:11px;color:#999}
-    .postmeta .cat{color:#2340ff;font-weight:600;letter-spacing:.04em}
-    .postmeta .cat.off{color:#bbb;font-weight:400}
-    .postmeta .d{margin-top:10px}
-    .postmeta .d + .d{margin-top:3px}
-    .postmeta .soon{margin-top:10px;display:inline-block;border:1px solid #e6e6e6;padding:2px 7px;color:#aaa}
-    .postbody{padding:40px}
-    .postbody h2{font-size:clamp(19px,2.6vw,24px);font-weight:700;letter-spacing:-.03em;line-height:1.36;margin:0;word-break:keep-all}
-    .postbody p{margin:12px 0 0;font-size:15.5px;color:#565656;max-width:660px;word-break:keep-all;line-height:1.6}
-    .upcoming .postbody h2,.upcoming .postbody p{color:#c2c6cc}
-    .contact-band{border-top:1px solid #111}
-    .contact-band .container{padding:88px 40px;text-align:center}
-    .contact-label{font-size:12px;color:#999;letter-spacing:.06em;text-transform:uppercase;margin:0}
-    .btn{display:inline-block;margin-top:26px;background:#0f0f0f;color:#fff;text-decoration:none;font-size:15px;font-weight:600;padding:15px 40px}
-    footer{border-top:1px solid #111}
-    footer .container{padding:24px 40px 40px;color:#aaa;font-size:11.5px;letter-spacing:.03em}
-    @media(max-width:760px){
-      .site-header .container{padding:13px 20px}
-      .rail-grid,.postrow{grid-template-columns:1fr}
-      .rail{border-right:0;padding:44px 24px 0}
-      .rail-body{padding:24px 24px 56px}
-      .postmeta{border-right:0;padding:28px 24px 0;display:flex;gap:12px;align-items:center}
-      .postmeta .d,.postmeta .soon{margin-top:0}
-      .postbody{padding:14px 24px 32px}
-      .contact-band .container{padding:64px 24px}
-    }
-  </style>
+  <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="p-blog">
 
 <header class="site-header">
   <div class="container">
@@ -109,7 +63,7 @@
 <section class="contact-band">
   <div class="container">
     <p class="contact-label">Contact</p>
-    <p style="margin:18px 0 0;font-size:18px;color:#0f0f0f;word-break:keep-all">SEO·GEO 프로젝트를 고민하고 계시다면</p>
+    <p style="margin:18px 0 0;font-size:18px;color:#111;word-break:keep-all">SEO·GEO 프로젝트를 고민하고 계시다면</p>
     <a href="/#contact" class="btn">프로젝트 문의</a>
   </div>
 </section>
