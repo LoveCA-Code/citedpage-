@@ -131,29 +131,30 @@ h1{font-weight:700;line-height:1.18;letter-spacing:-.04em;word-break:keep-all;ma
 .hp{position:absolute;left:-9999px;top:-9999px}
 
 /* =========================================================================
-   블로그 목록
+   블로그 목록 — 글 페이지 기준(레일 없음, 1000 기준, 단일 흐름)
    ========================================================================= */
-.postrow{display:grid;grid-template-columns:var(--rail) 1fr;text-decoration:none;color:inherit;border-bottom:1px solid var(--line)}
-a.postrow:hover{background:var(--surface-hover)}
-.postmeta{border-right:1px solid var(--line);padding:40px 0 40px 40px;font-size:var(--fs-micro);color:var(--text-3)}
-.postmeta .cat{color:var(--accent);font-weight:600;letter-spacing:.04em}
-.postmeta .cat.off{color:var(--text-4);font-weight:400}
-.postmeta .d{margin-top:10px}
-.postmeta .d + .d{margin-top:3px}
-.postmeta .soon{margin-top:10px;display:inline-block;border:1px solid var(--line);padding:2px 7px;color:var(--text-4)}
-.postbody{padding:40px}
-.postbody h2{font-size:clamp(19px,2.6vw,24px);font-weight:700;letter-spacing:-.03em;line-height:1.36;margin:0;word-break:keep-all}
-.postbody p{margin:12px 0 0;font-size:15px;color:var(--text-2);max-width:660px;word-break:keep-all;line-height:1.6}
-.upcoming .postbody h2,.upcoming .postbody p{color:var(--text-off)}
+.list-shell{max-width:1000px;margin:0 auto;padding:0 40px}
+.list-head{padding:72px 0 48px;border-bottom:1px solid var(--line)}
+.postrow{display:block;padding:36px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+a.postrow:hover h2{color:var(--accent)}
+.postrow .meta{font-size:var(--fs-label);color:var(--text-3);margin:0}
+.postrow .meta .cat{color:var(--accent);font-weight:600;letter-spacing:.04em}
+.postrow .meta .cat.off{color:var(--text-4);font-weight:400}
+.postrow .meta .soon{display:inline-block;border:1px solid var(--line);padding:2px 7px;color:var(--text-4);font-size:var(--fs-micro);margin-left:8px}
+.postrow h2{font-size:clamp(19px,2.6vw,24px);font-weight:700;letter-spacing:-.03em;line-height:1.36;margin:10px 0 0;word-break:keep-all}
+.postrow .ex{margin:10px 0 0;font-size:15px;color:var(--text-2);max-width:660px;word-break:keep-all;line-height:1.6}
+.upcoming h2,.upcoming .ex{color:var(--text-off)}
 
 /* =========================================================================
-   문의 밴드 (블로그·글 하단)
+   문의 밴드 — 공용 컴포넌트 (랜딩 제외 전 페이지 동일)
+   구조: Contact 라벨 → 제목 → 설명 → (여백 48) → 버튼
    ========================================================================= */
 .contact-band{border-top:1px solid var(--ink)}
-.contact-band .container{padding:88px 40px;text-align:center}
-.contact-band .narrow{padding-top:80px;padding-bottom:80px;text-align:center}
+.contact-band .narrow{padding-top:96px;padding-bottom:96px;text-align:center}
 .contact-label{font-size:var(--fs-label);color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin:0}
 .contact-band h2{font-size:clamp(24px,3.4vw,32px);font-weight:700;letter-spacing:-.03em;margin:16px 0 0}
+.contact-band .desc{margin:14px 0 0;color:var(--text-2);font-size:15px;word-break:keep-all}
+.contact-band .btn{margin-top:48px}
 
 /* =========================================================================
    글 페이지 (article) — 헤더/목차/본문
@@ -309,7 +310,7 @@ footer .container{padding:24px 40px 40px;color:var(--text-4);font-size:var(--fs-
 @media(max-width:760px){
   .site-header .container{padding:13px 20px}
   .nav{gap:20px}
-  .rail-grid,.postrow{grid-template-columns:1fr}
+  .rail-grid{grid-template-columns:1fr}
   .rail{border-right:0;padding:44px 24px 0}
   .rail-body{padding:24px 24px 64px}
   .stat-grid{grid-template-columns:1fr}
@@ -317,9 +318,8 @@ footer .container{padding:24px 40px 40px;color:var(--text-4);font-size:var(--fs-
   .form-2col{grid-template-columns:1fr}
   .cta-row{gap:18px}
 
-  .postmeta{border-right:0;padding:28px 24px 0;display:flex;gap:12px;align-items:center}
-  .postmeta .d,.postmeta .soon{margin-top:0}
-  .postbody{padding:14px 24px 32px}
+  .list-shell{padding:0 24px}
+  .list-head{padding:44px 0 32px}
   .contact-band .container{padding:64px 24px}
 
   .narrow{padding-left:24px;padding-right:24px}
