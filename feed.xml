@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>CitedPage 블로그 — SEO·GEO 실측 기록</title>
+  <link>https://citedpage.com/blog/</link>
+  <description>SEO와 GEO(생성형 엔진 최적화)에 대한 통설이 아니라, 직접 측정한 데이터를 기록합니다. 실측 연구와 실무 가이드.</description>
+  <language>ko</language>
+  <atom:link href="https://citedpage.com/feed.xml" rel="self" type="application/rss+xml"/>
+  <lastBuildDate>Thu, 09 Jul 2026 17:50:00 +0900</lastBuildDate>
+
+  <!-- 글 발행 시 아래 템플릿을 채워 이 위치에 추가 (최신 글이 위)
+  <item>
+    <title>글 제목</title>
+    <link>https://citedpage.com/blog/슬러그</link>
+    <guid isPermaLink="true">https://citedpage.com/blog/슬러그</guid>
+    <pubDate>Thu, 09 Jul 2026 09:00:00 +0900</pubDate>
+    <description>글 요약 한두 문장</description>
+  </item>
+  -->
+
+</channel>
+</rss>
