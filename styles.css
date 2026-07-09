@@ -68,12 +68,12 @@ a{color:var(--accent)}
 .nav .cta{border-bottom:2px solid var(--accent);padding-bottom:2px}
 
 /* =========================================================================
-   섹션 셸 (번호 레일)
+   홈 — 블로그 기준 (레일 없음, 1000, 가로선+섹션 라벨)
    ========================================================================= */
-.band{border-bottom:1px solid var(--ink)}
-.rail-grid{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:var(--rail) 1fr}
-.rail{border-right:1px solid var(--line);padding:96px 0 0 40px;font-size:var(--fs-label);color:var(--text-3);letter-spacing:.05em}
-.rail-body{padding:96px 40px 92px}
+.home-shell{max-width:1000px;margin:0 auto;padding:0 40px}
+.home-shell section{padding:88px 0;border-bottom:1px solid var(--line)}
+.home-shell section:last-child{border-bottom:0}
+.sec-label{font-size:var(--fs-label);color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin:0 0 24px}
 
 /* =========================================================================
    제목 / 텍스트
@@ -310,9 +310,8 @@ footer .container{padding:24px 40px 40px;color:var(--text-4);font-size:var(--fs-
 @media(max-width:760px){
   .site-header .container{padding:13px 20px}
   .nav{gap:20px}
-  .rail-grid{grid-template-columns:1fr}
-  .rail{border-right:0;padding:44px 24px 0}
-  .rail-body{padding:24px 24px 64px}
+  .home-shell{padding:0 24px}
+  .home-shell section{padding:56px 0}
   .stat-grid{grid-template-columns:1fr}
   .stat-col + .stat-col{border-left:0;border-top:1px solid var(--line)}
   .form-2col{grid-template-columns:1fr}
