@@ -2,6 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://citedpage.com/</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-07-09</lastmod>
+  </url>
+  <url>
+    <loc>https://citedpage.com/blog/</loc>
+    <lastmod>2026-07-09</lastmod>
+  </url>
+  <url>
+    <loc>https://citedpage.com/blog/post-ai-citation.html</loc>
+    <lastmod>2026-07-09</lastmod>
+  </url>
+  <url>
+    <loc>https://citedpage.com/blog/post-seo-guide.html</loc>
+    <lastmod>2026-07-09</lastmod>
   </url>
 </urlset>

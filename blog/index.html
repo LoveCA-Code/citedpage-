@@ -7,6 +7,7 @@
   <meta name="description" content="사이테드페이지 블로그. SEO와 GEO(생성형 엔진 최적화)에 대한 통설이 아니라, 직접 측정한 데이터를 기록합니다. 실측 연구와 실무 가이드.">
   <link rel="canonical" href="https://citedpage.com/blog/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CitedPage">
   <meta property="og:title" content="블로그 — SEO·GEO 실측 기록 | CitedPage">
   <meta property="og:description" content="SEO와 GEO에 대한 통설이 아니라, 직접 측정한 데이터를 기록합니다.">
   <meta property="og:url" content="https://citedpage.com/blog/">
@@ -19,139 +20,150 @@
     gtag('js', new Date());
     gtag('config', 'G-L4ZWFL73FF');
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
   <style>
-    :root{
-      --ink:#111111; --sub:#555555; --muted:#999999; --line:#e8e8e8;
-      --bg:#ffffff; --accent:#1a56db;
-    }
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:"Noto Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-         background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
-    .wrap{max-width:980px;margin:0 auto;padding:0 28px}
-    .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
-         font-weight:700;border:0;cursor:pointer;border-radius:0}
-    .btn:hover{opacity:.88}
-
-    .top{position:sticky;top:0;z-index:50;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line)}
-    .top .wrap{display:flex;justify-content:space-between;align-items:center}
-    .mark{font-size:19px;font-weight:900;letter-spacing:-0.03em;color:var(--ink);text-decoration:none}
-    .top nav{display:flex;gap:22px;align-items:center}
-    .top nav a.plain{color:var(--ink);text-decoration:none;font-size:14px;font-weight:700}
-    .top-cta{font-size:14px;padding:8px 20px}
-
-    /* 머리 */
-    .head{padding:88px 0 56px}
-    h1{font-size:clamp(32px,5.6vw,54px);font-weight:900;line-height:1.22;
-       letter-spacing:-0.045em;word-break:keep-all}
-    h1 .accent{color:var(--accent)}
-    .head .sub{margin-top:22px;font-size:17px;color:var(--sub);max-width:560px;word-break:keep-all}
-
-    /* 글 목록 — 편집디자인식 세로 리스트 */
-    .list{padding:8px 0 40px}
-    .row{display:block;border-top:1px solid var(--line);padding:36px 0;
-         text-decoration:none;color:inherit}
-    a.row:hover h2{color:var(--accent)}
-    .row .meta{font-size:13px;color:var(--muted)}
-    .row .meta .c{color:var(--accent);font-weight:700;margin-right:10px}
-    .row h2{font-size:clamp(21px,3.2vw,28px);font-weight:900;letter-spacing:-0.03em;
-            line-height:1.35;word-break:keep-all;margin-top:8px;transition:color .12s}
-    .row .ex{margin-top:10px;font-size:15.5px;color:var(--sub);max-width:660px;word-break:keep-all}
-
-    /* 준비 중 */
-    .soon .meta .c{color:var(--muted)}
-    .soon h2{color:#b9bec5}
-    .soon .ex{color:#b9bec5}
-    .soon-note{font-size:12.5px;color:var(--muted);border:1px solid var(--line);
-               padding:2px 8px;margin-left:10px;font-weight:500}
-
-    /* 하단 문의 한 줄 */
-    .foot-cta{border-top:1px solid var(--line);padding:56px 0;text-align:center}
-    .foot-cta p{font-size:15px;color:var(--sub)}
-    .foot-cta .btn{margin-top:20px;font-size:15px;padding:14px 36px}
-
-    footer{border-top:1px solid var(--line);padding:32px 0 56px;color:var(--muted);font-size:13px}
-
-    @media (max-width:640px){
-      .head{padding:56px 0 36px}
-      .row{padding:28px 0}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;color:#0f0f0f;background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:#2340ff}
+    .container{max-width:1080px;margin:0 auto}
+    .site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(4px);border-bottom:1px solid #111}
+    .site-header .container{padding:15px 40px;display:flex;justify-content:space-between;align-items:center}
+    .logo{font-size:17px;font-weight:700;letter-spacing:-.02em;color:#0f0f0f;text-decoration:none}
+    .nav{display:flex;gap:32px;align-items:center}
+    .nav a{color:#0f0f0f;text-decoration:none;font-size:13px;font-weight:600}
+    .nav .cta{border-bottom:2px solid #2340ff;padding-bottom:2px}
+    .band{border-bottom:1px solid #111}
+    .rail-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:150px 1fr}
+    .rail{border-right:1px solid #e6e6e6;padding:96px 0 0 40px;font-size:12px;color:#999;letter-spacing:.05em}
+    .rail-body{padding:96px 40px 92px}
+    h1{font-size:clamp(30px,4.6vw,46px);font-weight:700;line-height:1.2;letter-spacing:-.04em;word-break:keep-all;margin:0;max-width:760px}
+    .accent{color:#2340ff}
+    .lede{margin:26px 0 0;font-size:16.5px;color:#565656;max-width:540px;word-break:keep-all;line-height:1.65}
+    .postrow{display:grid;grid-template-columns:150px 1fr;text-decoration:none;color:inherit;border-bottom:1px solid #e6e6e6}
+    a.postrow:hover{background:#fafafa}
+    .postmeta{border-right:1px solid #e6e6e6;padding:40px 0 40px 40px;font-size:11px;color:#999}
+    .postmeta .cat{color:#2340ff;font-weight:600;letter-spacing:.04em}
+    .postmeta .cat.off{color:#bbb;font-weight:400}
+    .postmeta .d{margin-top:10px}
+    .postmeta .d + .d{margin-top:3px}
+    .postmeta .soon{margin-top:10px;display:inline-block;border:1px solid #e6e6e6;padding:2px 7px;color:#aaa}
+    .postbody{padding:40px}
+    .postbody h2{font-size:clamp(19px,2.6vw,24px);font-weight:700;letter-spacing:-.03em;line-height:1.36;margin:0;word-break:keep-all}
+    .postbody p{margin:12px 0 0;font-size:15.5px;color:#565656;max-width:660px;word-break:keep-all;line-height:1.6}
+    .upcoming .postbody h2,.upcoming .postbody p{color:#c2c6cc}
+    .contact-band{border-top:1px solid #111}
+    .contact-band .container{padding:88px 40px;text-align:center}
+    .contact-label{font-size:12px;color:#999;letter-spacing:.06em;text-transform:uppercase;margin:0}
+    .btn{display:inline-block;margin-top:26px;background:#0f0f0f;color:#fff;text-decoration:none;font-size:15px;font-weight:600;padding:15px 40px}
+    footer{border-top:1px solid #111}
+    footer .container{padding:24px 40px 40px;color:#aaa;font-size:11.5px;letter-spacing:.03em}
+    @media(max-width:760px){
+      .site-header .container{padding:13px 20px}
+      .rail-grid,.postrow{grid-template-columns:1fr}
+      .rail{border-right:0;padding:44px 24px 0}
+      .rail-body{padding:24px 24px 56px}
+      .postmeta{border-right:0;padding:28px 24px 0;display:flex;gap:12px;align-items:center}
+      .postmeta .d,.postmeta .soon{margin-top:0}
+      .postbody{padding:14px 24px 32px}
+      .contact-band .container{padding:64px 24px}
     }
   </style>
 </head>
 <body>
 
-  <header class="top">
-    <div class="wrap">
-      <a class="mark" href="/">CitedPage</a>
-      <nav>
-        <a class="plain" href="/blog/" aria-current="page">블로그</a>
-        <a class="btn top-cta" href="/#contact">문의하기</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">CitedPage</a>
+    <nav class="nav">
+      <a href="/blog/">블로그</a>
+      <a href="/#contact" class="cta">문의하기</a>
+    </nav>
+  </div>
+</header>
 
-  <div class="head">
-    <div class="wrap">
+<section class="band">
+  <div class="rail-grid">
+    <div class="rail">00 — 블로그</div>
+    <div class="rail-body">
       <h1><span class="accent">근거(논문, 테스트)</span>를 기준으로<br>신뢰도 높은 정보를 작성합니다.</h1>
-      <p class="sub">SEO와 GEO(생성형 엔진 최적화)에 대한 조언은 많지만 근거는 드뭅니다.
-        이 블로그는 직접 측정한 데이터만 기록합니다 — 실패한 실험까지.</p>
+      <p class="lede">SEO와 GEO(생성형 엔진 최적화)에 대한 조언은 많지만 근거는 드뭅니다. 이 블로그는 직접 측정한 데이터만 기록합니다 — 실패한 실험까지.</p>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+  <a href="/blog/post-ai-citation.html" class="postrow">
+    <div class="postmeta">
+      <div class="cat">실측 연구</div>
+      <div class="d">2026-07-08</div>
+      <div class="d">12분</div>
+    </div>
+    <div class="postbody">
+      <h2>AI는 어떤 글을 인용하는가 — 512페이지 전수 실측</h2>
+      <p>Gemini에게 같은 질문을 30번 던지고, 그 검색 결과 상위 100위 512페이지를 전부 읽었습니다. 인용의 91%는 검색 상위 100에서 나왔고, 체크리스트는 인용을 가르지 못했습니다.</p>
+    </div>
+  </a>
+
+  <a href="/blog/post-seo-guide.html" class="postrow">
+    <div class="postmeta">
+      <div class="cat">가이드</div>
+      <div class="d">2026-07-08</div>
+      <div class="d">9분</div>
+    </div>
+    <div class="postbody">
+      <h2>SEO 업체 선정 기준 — 계약 전에 꼭 물어봐야 할 7가지</h2>
+      <p>"노출 보장"이라는 답이 왜 위험 신호인지, 보고서에서 무엇을 확인해야 하는지. SEO를 파는 회사가 쓴, 어디에나 적용되는 검증 질문 일곱 가지.</p>
+    </div>
+  </a>
+
+  <div class="postrow upcoming">
+    <div class="postmeta">
+      <div class="cat off">실측 연구</div>
+      <div class="soon">곧 공개</div>
+    </div>
+    <div class="postbody">
+      <h2>같은 질문을 AI에 30번 던지면 생기는 일 — 회전 추첨의 실체</h2>
+      <p>AI의 인용은 매번 다릅니다. 30회 반복 측정으로 본 단골과 뜨내기의 구조.</p>
     </div>
   </div>
 
-  <main class="list">
-    <div class="wrap">
-
-      <a class="row" href="sample-post.html">
-        <p class="meta"><span class="c">실측 연구</span><time datetime="2026-07-08">2026-07-08</time> · 12분</p>
-        <h2>AI는 어떤 글을 인용하는가 — 512페이지 전수 실측</h2>
-        <p class="ex">Gemini에게 같은 질문을 30번 던지고, 그 검색 결과 상위 100위 512페이지를
-        전부 읽었습니다. 인용의 91%는 검색 상위 100에서 나왔고, 체크리스트는 인용을
-        가르지 못했습니다.</p>
-      </a>
-
-      <a class="row" href="sample-post-guide.html">
-        <p class="meta"><span class="c">가이드</span><time datetime="2026-07-08">2026-07-08</time> · 9분</p>
-        <h2>SEO 업체 선정 기준 — 계약 전에 꼭 물어봐야 할 7가지</h2>
-        <p class="ex">"노출 보장"이라는 답이 왜 위험 신호인지, 보고서에서 무엇을 확인해야
-        하는지. SEO를 파는 회사가 쓴, 어디에나 적용되는 검증 질문 일곱 가지.</p>
-      </a>
-
-      <div class="row soon">
-        <p class="meta"><span class="c">실측 연구</span>준비 중<span class="soon-note">곧 공개</span></p>
-        <h2>같은 질문을 AI에 30번 던지면 생기는 일 — 회전 추첨의 실체</h2>
-        <p class="ex">AI의 인용은 매번 다릅니다. 30회 반복 측정으로 본 단골과 뜨내기의 구조.</p>
-      </div>
-
-      <div class="row soon">
-        <p class="meta"><span class="c">실측 연구</span>준비 중<span class="soon-note">곧 공개</span></p>
-        <h2>"SEO 업체"라고 물었을 때 AI가 거의 매번 추천하는 회사들의 공통점</h2>
-        <p class="ex">30회 중 30회 인용되는 회사와 검색엔 있는데 한 번도 인용 안 되는 회사 —
-        무엇이 갈랐나.</p>
-      </div>
-
-      <div class="row soon">
-        <p class="meta"><span class="c">운영 기록</span>준비 중<span class="soon-note">곧 공개</span></p>
-        <h2>0에서 시작하는 도메인 — 첫 색인과 첫 AI 인용까지의 기록</h2>
-        <p class="ex">이 사이트 자체의 최적화 일지. 색인, 첫 노출, 첫 인용의 순간들을
-        날짜와 숫자로 남깁니다.</p>
-      </div>
-
+  <div class="postrow upcoming">
+    <div class="postmeta">
+      <div class="cat off">실측 연구</div>
+      <div class="soon">곧 공개</div>
     </div>
-  </main>
-
-  <section class="foot-cta">
-    <div class="wrap">
-      <p>SEO·GEO 프로젝트를 고민하고 계시다면</p>
-      <a class="btn" href="/#contact">프로젝트 문의</a>
+    <div class="postbody">
+      <h2>"SEO 업체"라고 물었을 때 AI가 거의 매번 추천하는 회사들의 공통점</h2>
+      <p>30회 중 30회 인용되는 회사와 검색엔 있는데 한 번도 인용 안 되는 회사 — 무엇이 갈랐나.</p>
     </div>
-  </section>
+  </div>
 
-  <footer>
-    <div class="wrap"><p>© 2026 CitedPage(사이테드페이지) · citedpage.com</p></div>
-  </footer>
+  <div class="postrow upcoming">
+    <div class="postmeta">
+      <div class="cat off">운영 기록</div>
+      <div class="soon">곧 공개</div>
+    </div>
+    <div class="postbody">
+      <h2>0에서 시작하는 도메인 — 첫 색인과 첫 AI 인용까지의 기록</h2>
+      <p>이 사이트 자체의 최적화 일지. 색인, 첫 노출, 첫 인용의 순간들을 날짜와 숫자로 남깁니다.</p>
+    </div>
+  </div>
+
+</main>
+
+<section class="contact-band">
+  <div class="container">
+    <p class="contact-label">Contact</p>
+    <p style="margin:18px 0 0;font-size:18px;color:#0f0f0f;word-break:keep-all">SEO·GEO 프로젝트를 고민하고 계시다면</p>
+    <a href="/#contact" class="btn">프로젝트 문의</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© 2026 CITEDPAGE · citedpage.com</div>
+</footer>
 
 </body>
 </html>
