@@ -36,7 +36,7 @@
 
   /* ---- 레이아웃 ------------------------------------------------------- */
   --maxw:1080px;         /* 페이지 최대폭 */
-  --narrow:720px;        /* 글 본문 폭 */
+  --narrow:700px;        /* 글 본문 폭 */
   --rail:140px;          /* 번호 레일 폭 (전 페이지 통일) */
   --header-h:64px;
 }
@@ -252,19 +252,18 @@ ul.takeaway li{margin-top:8px;word-break:keep-all}
    모바일(≤980): 단일 컬럼 — 목차=본문 상단(요약 아래), 연구팀=이전/다음글 위
    ========================================================================= */
 .article-shell{
-  max-width:1400px;margin:0 auto;
-  display:grid;grid-template-columns:1fr minmax(0,720px) 1fr;align-items:start;
+  max-width:1000px;margin:0 auto;
+  display:grid;grid-template-columns:minmax(0,700px) 300px;align-items:start;
 }
-/* 제목+요약 밴드: 3단 전체를 가로지르는 첫 행 — 아래 가로선이 레일의 상한선 */
-.article-shell .posthead{grid-column:1 / -1;width:100%}
-/* 히어로 내부: 900 기준 박스 — 요약문도 전체 폭 사용 (배경 이미지 없음 확정) */
-.posthead .hero-inner{max-width:900px;margin:0 auto;padding:96px 48px 96px}
-.col-main{min-width:0;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+/* 2단: 본문 700 (제목+요약 포함) | 우측 레일 300 (목차 위, 연구팀 아래) */
+.col-main{min-width:0;border-right:1px solid var(--line);grid-column:1}
+.side-team{grid-column:2}
 
 /* 양쪽 사이드 레일(스티키) */
-.side{position:sticky;top:calc(var(--header-h) + 24px);align-self:start;padding:80px 30px 40px}
+.side{position:sticky;top:calc(var(--header-h) + 24px);align-self:start;padding:48px 40px 40px}
 
-/* 좌측 목차 레일 */
+/* 연구팀 카드 (목차 아래, 구분선) */
+.side .team-card{margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
 .toc-rail .label{font-size:var(--fs-micro);color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin:0 0 14px}
 .toc-rail ol{list-style:none;margin:0;padding:0;font-size:var(--fs-sm)}
 .toc-rail li{padding:5px 0}
@@ -290,9 +289,6 @@ ul.takeaway li{margin-top:8px;word-break:keep-all}
   .side{display:none}
   .toc-mobile{display:block}
   .team-mobile{display:block}
-}
-@media(max-width:760px){
-  .posthead .hero-inner{padding:48px 24px 36px}
 }
 
 /* =========================================================================

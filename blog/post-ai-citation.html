@@ -56,9 +56,11 @@
 
 <div class="article-shell">
 
-  <!-- 첫 행: 제목 + 세 줄 요약 (1400 와이드 히어로 — 아래 가로선이 레일 상한선, 배경 이미지 예정) -->
+  <!-- 본문 컬럼 (제목+요약 포함) -->
+  <div class="col-main">
+
   <div class="posthead">
-    <div class="hero-inner">
+    <div class="narrow">
       <p class="crumb"><a href="/">홈</a> / <a href="/blog/">블로그</a></p>
       <p class="cat">실측 연구</p>
       <h1>AI는 어떤 글을 인용하는가 — 512페이지 전수 실측</h1>
@@ -82,23 +84,6 @@
       </nav>
     </div>
   </div>
-
-  <!-- 좌측: 목차 (PC 전용, 스티키) -->
-  <aside class="side side-toc" aria-label="목차">
-    <nav class="toc-rail">
-      <p class="label">목차</p>
-      <ol>
-        <li><a href="#s1"><span class="n">01</span>무엇을 어떻게 측정했나</a></li>
-        <li><a href="#s2"><span class="n">02</span>인용의 91%는 검색 상위 100에서 나온다</a></li>
-        <li><a href="#s3"><span class="n">03</span>체크리스트는 효과가 없었다</a></li>
-        <li><a href="#s4"><span class="n">04</span>그러면 무엇이 인용을 가르는가</a></li>
-        <li><a href="#s5"><span class="n">05</span>이 결과가 뜻하는 것</a></li>
-      </ol>
-    </nav>
-  </aside>
-
-  <!-- 가운데: 본문 -->
-  <div class="col-main">
 
     <article>
       <div class="narrow">
@@ -194,8 +179,18 @@
 
   </div>
 
-  <!-- 우측: 연구팀 (PC 전용, 스티키) -->
-  <aside class="side side-team" aria-label="연구팀">
+  <!-- 우측: 목차 + 연구팀 (PC 전용, 스티키, 최상단부터) -->
+  <aside class="side side-team" aria-label="목차와 연구팀">
+    <nav class="toc-rail">
+      <p class="label">목차</p>
+      <ol>
+        <li><a href="#s1"><span class="n">01</span>무엇을 어떻게 측정했나</a></li>
+        <li><a href="#s2"><span class="n">02</span>인용의 91%는 검색 상위 100에서 나온다</a></li>
+        <li><a href="#s3"><span class="n">03</span>체크리스트는 효과가 없었다</a></li>
+        <li><a href="#s4"><span class="n">04</span>그러면 무엇이 인용을 가르는가</a></li>
+        <li><a href="#s5"><span class="n">05</span>이 결과가 뜻하는 것</a></li>
+      </ol>
+    </nav>
     <div class="team-card">
       <p class="label">연구팀</p>
       <p class="team-name">CitedPage 연구팀</p>
