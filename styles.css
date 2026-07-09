@@ -23,7 +23,7 @@
 
   /* ---- 글자 ----------------------------------------------------------- */
   --font-sans:'Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
-  --font-mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+  --font-mono:'IBM Plex Mono','Pretendard',ui-monospace,Consolas,monospace; /* 한글은 Pretendard로 (Plex Mono에 한글 없음 → 굴림 낙하 방지) */
   --fs-body:16px;        /* 본문 */
   --fs-sm:14px;          /* 작은 본문 */
   --fs-meta:13px;        /* 메뉴·메타 */
@@ -86,7 +86,7 @@ h1{font-weight:700;line-height:1.18;letter-spacing:-.04em;word-break:keep-all;ma
 .p-thanks  h1{font-size:clamp(26px,4.5vw,40px)}
 .dot,.accent{color:var(--accent)}
 
-.lede{margin:28px 0 0;font-size:16.5px;color:var(--text-2);max-width:540px;word-break:keep-all;line-height:1.65}
+.lede{margin:28px 0 0;font-size:var(--fs-body);color:var(--text-2);max-width:540px;word-break:keep-all;line-height:1.65}
 .sec-title{font-size:clamp(24px,3.5vw,30px);font-weight:700;letter-spacing:-.03em;line-height:1.32;word-break:keep-all;margin:0;max-width:560px}
 .sec-sub{margin:16px 0 0;font-size:15px;color:var(--text-2);max-width:520px;word-break:keep-all}
 .note{margin:12px 0 0;font-size:var(--fs-micro);color:var(--text-4);letter-spacing:.03em}
@@ -108,7 +108,7 @@ h1{font-weight:700;line-height:1.18;letter-spacing:-.04em;word-break:keep-all;ma
 .stat-col{padding:24px 26px}
 .stat-col + .stat-col{border-left:1px solid var(--line)}
 .stat-title{font-size:var(--fs-micro);color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin:0 0 18px}
-.stat-row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line-faint);font-size:14.5px}
+.stat-row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line-faint);font-size:var(--fs-sm)}
 .stat-row:last-child{border-bottom:0}
 .stat-row .k{color:var(--text-2)}
 .stat-row .v{font-weight:500;white-space:nowrap}
@@ -143,7 +143,7 @@ a.postrow:hover{background:var(--surface-hover)}
 .postmeta .soon{margin-top:10px;display:inline-block;border:1px solid var(--line);padding:2px 7px;color:var(--text-4)}
 .postbody{padding:40px}
 .postbody h2{font-size:clamp(19px,2.6vw,24px);font-weight:700;letter-spacing:-.03em;line-height:1.36;margin:0;word-break:keep-all}
-.postbody p{margin:12px 0 0;font-size:15.5px;color:var(--text-2);max-width:660px;word-break:keep-all;line-height:1.6}
+.postbody p{margin:12px 0 0;font-size:15px;color:var(--text-2);max-width:660px;word-break:keep-all;line-height:1.6}
 .upcoming .postbody h2,.upcoming .postbody p{color:var(--text-off)}
 
 /* =========================================================================
@@ -172,21 +172,21 @@ a.postrow:hover{background:var(--surface-hover)}
 
 .toc{margin:40px 0 0;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .toc .label{font-size:var(--fs-micro);color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px}
-.toc ol{list-style:none;margin:0;padding:0;font-size:14.5px}
+.toc ol{list-style:none;margin:0;padding:0;font-size:var(--fs-sm)}
 .toc li{padding:4px 0}
 .toc a{color:var(--text-2);text-decoration:none}
 .toc .n{color:var(--accent);margin-right:10px}
 
 article{padding:8px 0 84px}
-.h2n{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.03em;line-height:1.35;margin:64px 0 0;word-break:keep-all;scroll-margin-top:70px;display:flex;gap:14px;align-items:baseline}
+.h2n{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.03em;line-height:1.35;margin:64px 0 0;word-break:keep-all;scroll-margin-top:120px;display:flex;gap:14px;align-items:baseline}
 .h2n .n{font-size:var(--fs-body);color:var(--accent);font-weight:500;flex-shrink:0}
 h3{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:44px 0 0;color:var(--ink)}
-.body{font-size:16.5px;color:var(--text-body);margin:20px 0 0;word-break:keep-all}
+.body{font-size:var(--fs-body);color:var(--text-body);margin:20px 0 0;word-break:keep-all}
 .body strong,.body b{font-weight:700;color:var(--ink)}
 
 pre.spec{
   margin:32px 0 0;padding:18px 20px;background:var(--surface-2);border:1px solid var(--line);
-  font-size:13.5px;line-height:1.7;overflow-x:auto;font-family:var(--font-mono);
+  font-size:var(--fs-meta);line-height:1.7;overflow-x:auto;font-family:var(--font-mono);
   color:var(--text-body);white-space:pre-wrap;
 }
 
@@ -201,11 +201,11 @@ figure{margin:32px 0 0}
 figcaption{margin-top:10px;font-size:var(--fs-micro);color:var(--text-3)}
 
 blockquote{margin:36px 0 0;border-left:2px solid var(--ink);padding:2px 0 2px 22px}
-blockquote p{font-size:16.5px;color:var(--ink);font-weight:500;margin:0;word-break:keep-all}
-blockquote cite{display:block;margin-top:10px;font-size:12.5px;color:var(--text-3);font-style:normal}
+blockquote p{font-size:var(--fs-body);color:var(--ink);font-weight:500;margin:0;word-break:keep-all}
+blockquote cite{display:block;margin-top:10px;font-size:var(--fs-label);color:var(--text-3);font-style:normal}
 
 .tablewrap{overflow-x:auto;margin:32px 0 0}
-table{width:100%;border-collapse:collapse;font-size:14.5px}
+table{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
 th{text-align:left;font-weight:500;color:var(--text-3);font-size:var(--fs-label);padding:11px 8px;border-bottom:2px solid var(--ink);white-space:nowrap}
 th.r{text-align:right}
 td{padding:11px 8px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -214,14 +214,14 @@ td.r{text-align:right}
 .mut{color:var(--text-3)}
 .tnote{margin:10px 0 0;font-size:var(--fs-micro);color:var(--text-3)}
 
-ul.takeaway{margin:20px 0 0 22px;font-size:16.5px;color:var(--text-body);padding:0}
+ul.takeaway{margin:20px 0 0 22px;font-size:var(--fs-body);color:var(--text-body);padding:0}
 ul.takeaway li{margin-top:8px;word-break:keep-all}
 
 .box{margin:56px 0 0;padding-top:20px;border-top:2px solid var(--ink)}
 .box .label{font-size:var(--fs-label);font-weight:600;color:var(--ink);letter-spacing:.04em;margin:0}
-.box p{font-size:14.5px;color:var(--text-2);margin:8px 0 0;word-break:keep-all}
+.box p{font-size:var(--fs-sm);color:var(--text-2);margin:8px 0 0;word-break:keep-all}
 
-.refs{margin:48px 0 0;font-size:13.5px;color:var(--text-2)}
+.refs{margin:48px 0 0;font-size:var(--fs-meta);color:var(--text-2)}
 .refs .label{font-size:var(--fs-label);font-weight:600;color:var(--ink);letter-spacing:.04em;margin:0 0 10px}
 .refs ol{margin:0 0 0 18px;padding:0}
 .refs li{margin-top:4px}
@@ -247,6 +247,55 @@ ul.takeaway li{margin-top:8px;word-break:keep-all}
 .relgrid .d{font-size:var(--fs-label);color:var(--text-3);margin:10px 0 0}
 
 /* =========================================================================
+   글 3단 레이아웃 — 목차 | 본문 | 연구팀   (2026-07 추가)
+   PC   : 좌우 세로선 너머에 목차(좌)·연구팀(우), 가운데 본문
+   모바일(≤980): 단일 컬럼 — 목차=본문 상단(요약 아래), 연구팀=이전/다음글 위
+   ========================================================================= */
+.article-shell{
+  max-width:1400px;margin:0 auto;
+  display:grid;grid-template-columns:1fr minmax(0,720px) 1fr;align-items:start;
+}
+/* 제목+요약 밴드: 3단 전체를 가로지르는 첫 행 — 아래 가로선이 레일의 상한선 */
+.article-shell .posthead{grid-column:1 / -1;width:100%}
+/* 히어로 내부: 900 기준 박스 — 요약문도 전체 폭 사용 (배경 이미지 없음 확정) */
+.posthead .hero-inner{max-width:900px;margin:0 auto;padding:96px 48px 96px}
+.col-main{min-width:0;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+
+/* 양쪽 사이드 레일(스티키) */
+.side{position:sticky;top:calc(var(--header-h) + 24px);align-self:start;padding:80px 30px 40px}
+
+/* 좌측 목차 레일 */
+.toc-rail .label{font-size:var(--fs-micro);color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin:0 0 14px}
+.toc-rail ol{list-style:none;margin:0;padding:0;font-size:var(--fs-sm)}
+.toc-rail li{padding:5px 0}
+.toc-rail a{color:var(--text-2);text-decoration:none;line-height:1.45;display:block}
+.toc-rail a:hover{color:var(--accent)}
+.toc-rail .n{color:var(--accent);margin-right:8px;font-family:var(--font-mono);font-size:var(--fs-label)}
+.toc-rail a.active{color:var(--ink);font-weight:700}  /* 스크롤 스파이: 지금 읽는 섹션 */
+
+/* 우측 연구팀 레일 */
+.team-card .label{font-size:var(--fs-micro);color:var(--text-3);letter-spacing:.06em;text-transform:uppercase;margin:0 0 14px}
+.team-card .team-name{font-size:var(--fs-sm);font-weight:700;color:var(--ink);margin:0}
+.team-card .team-desc{font-size:var(--fs-meta);color:var(--text-2);margin:10px 0 0;word-break:keep-all;line-height:1.6}
+.team-card a{display:inline-block;margin-top:16px;font-size:var(--fs-meta);color:var(--accent);text-decoration:none}
+
+/* 모바일 전용 사본 — 기본(데스크톱)은 숨김 */
+.toc-mobile,.team-mobile{display:none}
+.team-mobile{margin:48px 0 0;padding:20px 0;border-top:1px solid var(--line);font-size:var(--fs-sm);color:var(--text-2);word-break:keep-all}
+.team-mobile b{color:var(--ink)}
+
+@media(max-width:1200px){
+  .article-shell{display:block;max-width:none}
+  .col-main{border-left:0;border-right:0}
+  .side{display:none}
+  .toc-mobile{display:block}
+  .team-mobile{display:block}
+}
+@media(max-width:760px){
+  .posthead .hero-inner{padding:48px 24px 36px}
+}
+
+/* =========================================================================
    thanks (문의 완료)
    ========================================================================= */
 .p-thanks main{padding:130px 24px;text-align:center}
@@ -256,7 +305,7 @@ ul.takeaway li{margin-top:8px;word-break:keep-all}
    푸터
    ========================================================================= */
 footer{border-top:1px solid var(--ink)}
-footer .container{padding:24px 40px 40px;color:var(--text-4);font-size:11.5px;letter-spacing:.03em}
+footer .container{padding:24px 40px 40px;color:var(--text-4);font-size:var(--fs-micro);letter-spacing:.03em}
 
 /* =========================================================================
    모바일 (≤760px)
