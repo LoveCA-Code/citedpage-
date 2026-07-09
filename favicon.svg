@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- CitedPage 파비콘 — 인용 각주 [1] 모티프 (도형 직접 드로잉, 폰트 무관) -->
+  <rect width="64" height="64" fill="#2340ff"/>
+  <!-- 왼쪽 대괄호 [ -->
+  <rect x="11" y="13" width="5" height="38" fill="#fff"/>
+  <rect x="11" y="13" width="10" height="5" fill="#fff"/>
+  <rect x="11" y="46" width="10" height="5" fill="#fff"/>
+  <!-- 숫자 1 -->
+  <rect x="30" y="13" width="6" height="33" fill="#fff"/>
+  <rect x="24" y="17" width="6" height="5" fill="#fff"/>
+  <rect x="25" y="46" width="16" height="5" fill="#fff"/>
+  <!-- 오른쪽 대괄호 ] -->
+  <rect x="48" y="13" width="5" height="38" fill="#fff"/>
+  <rect x="43" y="13" width="10" height="5" fill="#fff"/>
+  <rect x="43" y="46" width="10" height="5" fill="#fff"/>
+</svg>
