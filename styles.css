@@ -297,6 +297,7 @@ ul.takeaway li{margin-top:8px;word-break:keep-all}
    ========================================================================= */
 .p-thanks main{padding:130px 24px;text-align:center}
 .p-thanks p{margin:16px 0 0;color:var(--text-2);font-size:var(--fs-body)}
+.p-thanks .btn{margin-top:48px}
 
 /* =========================================================================
    푸터

@@ -1,0 +1,11 @@
+# 콘텐츠 리셋(2026-07-09)으로 내려간 글들의 옛 URL → 블로그 목록 301
+# 주의: post-ai-citation은 디자인 캔버스로 레포에 존재하지만 비공개 상태 —
+#       정식 발행 시 아래 두 줄을 제거할 것
+/blog/sample-post.html /blog/ 301
+/blog/sample-post /blog/ 301
+/blog/sample-post-guide.html /blog/ 301
+/blog/sample-post-guide /blog/ 301
+/blog/post-ai-citation.html /blog/ 301
+/blog/post-ai-citation /blog/ 301
+/blog/post-seo-guide.html /blog/ 301
+/blog/post-seo-guide /blog/ 301
