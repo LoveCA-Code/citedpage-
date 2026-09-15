@@ -1,6 +1,5 @@
-# 콘텐츠 리셋(2026-07-09)으로 내려간 글들의 옛 URL → 블로그 목록 301
-# 주의: post-ai-citation은 디자인 캔버스로 레포에 존재하지만 비공개 상태 —
-#       정식 발행 시 아래 두 줄을 제거할 것
+# 내려간 글·페이지의 옛 URL → 블로그 목록/홈 301
+# 2026-07-09 콘텐츠 리셋
 /blog/sample-post.html /blog/ 301
 /blog/sample-post /blog/ 301
 /blog/sample-post-guide.html /blog/ 301
@@ -9,3 +8,9 @@
 /blog/post-ai-citation /blog/ 301
 /blog/post-seo-guide.html /blog/ 301
 /blog/post-seo-guide /blog/ 301
+# 2026-09-15 개인 블로그 전환 — 필러 내림(재작성 예정), 문의 기능 제거
+# 주의: 같은 슬러그로 재발행하면 아래 두 줄을 지울 것
+/blog/what-is-seo.html /blog/ 301
+/blog/what-is-seo /blog/ 301
+/thanks.html / 301
+/thanks / 301
