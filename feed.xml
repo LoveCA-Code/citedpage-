@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-  <title>CitedPage 블로그</title>
-  <link>https://citedpage.com/blog/</link>
-  <description>CitedPage 블로그</description>
-  <language>ko</language>
-  <atom:link href="https://citedpage.com/feed.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 15 Sep 2026 12:00:00 +0900</lastBuildDate>
-
-  <!-- 글 발행 시 아래 템플릿을 채워 이 위치에 추가 (최신 글이 위)
-  <item>
-    <title>글 제목</title>
-    <link>https://citedpage.com/blog/슬러그</link>
-    <guid isPermaLink="true">https://citedpage.com/blog/슬러그</guid>
-    <pubDate>Thu, 09 Jul 2026 09:00:00 +0900</pubDate>
-    <description>글 요약 한두 문장</description>
-  </item>
-  -->
-
-</channel>
-</rss>
+<rss version="2.0"><channel>
+  <title>CitedPage 블로그</title><link>https://citedpage.com/blog</link>
+  <description>검색과 AI 검색에 노출되는 글을 만드는 방법</description><language>ko</language>
+  <item><title>캐노니컬 태그(Canonical Tag)원리, 중요성 및 활용법</title><link>https://citedpage.com/blog/canonical-tag</link><guid>https://citedpage.com/blog/canonical-tag</guid><description>캐노니컬 태그를 넣어도 구글이 다른 주소를 고를 때가 있습니다. 왜 그런지와 어디를 고쳐야 하는지 정리했습니다.</description><pubDate>Sat, 03 Oct 2026 00:00:00 GMT</pubDate></item>
+</channel></rss>

@@ -1,4 +1,4 @@
-/* =========================================================================
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>블로그 | CitedPage</title><meta name="description" content="검색과 AI 검색에 노출되는 글을 만드는 방법을 영역·주제별로 정리합니다."><link rel="canonical" href="https://citedpage.com/blog"><meta name="robots" content="max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="CitedPage"><meta property="og:title" content="블로그"><meta property="og:description" content="검색과 AI 검색에 노출되는 글을 만드는 방법을 영역·주제별로 정리합니다."><meta property="og:url" content="https://citedpage.com/blog"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://citedpage.com/img/og-default.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta name="twitter:card" content="summary_large_image"><link rel="alternate" type="application/rss+xml" title="CitedPage 블로그" href="/feed.xml"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>/* =========================================================================
    CitedPage — 테마 파일 (design system)
    이 파일 하나가 모든 페이지의 디자인을 통제합니다.
    색·글자크기·폰트를 바꾸려면 아래 :root 값만 고치세요 → 전 페이지 일괄 반영.
@@ -356,3 +356,139 @@ footer .container{padding:24px 40px 40px;color:var(--text-4);font-size:var(--fs-
 table.cmp{width:100%;border-collapse:collapse;margin:20px 0;font-size:15px}
 table.cmp th,table.cmp td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
 table.cmp th{background:var(--surface-2);font-weight:600}
+</style><style>/* 새 부품만 — 색·글꼴·간격은 theme.css(예전 디자인)의 변수를 그대로 씁니다 */
+.tldr{margin:28px 0 0}
+.tldr ol{margin:0;padding-left:20px;font-size:var(--fs-body);color:var(--text-2);line-height:1.75}
+.tldr li{margin:0 0 10px}
+.tldr li strong,.tldr li b{color:var(--text-body)}
+.chk{background:var(--surface-2);border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 6px 6px 0}
+.chk p{margin:6px 0}
+.box.done p{color:var(--text-2)}
+.box.done{border-top-width:1px;margin-top:40px;padding-top:16px}
+/* 자주 묻는 질문 — 접히는 칸 */
+.faq{margin:40px 0 0}
+details.qa{border-top:1px solid var(--line)}
+details.qa:last-child{border-bottom:1px solid var(--line)}
+details.qa summary{cursor:pointer;list-style:none;padding:14px 28px 14px 0;position:relative}
+details.qa summary::-webkit-details-marker{display:none}
+details.qa summary h3{margin:0;font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+details.qa summary::after{content:"";position:absolute;right:4px;top:21px;width:8px;height:8px;border-right:1.5px solid var(--text-3);border-bottom:1.5px solid var(--text-3);transform:rotate(45deg);transition:transform .15s}
+details.qa[open] summary::after{transform:rotate(-135deg)}
+.qa-a{padding:0 0 14px;font-size:var(--fs-sm);color:var(--text-body)}
+.qa-a p{margin:0 0 10px}
+/* 그림 */
+figure.fg img{width:100%;height:auto;display:block;border:1px solid var(--line)}
+figure.fg figcaption{font-size:var(--fs-micro);color:var(--text-4);margin-top:10px;letter-spacing:.02em}
+/* 주석 — 번호 앞 문장에 밑줄, 칸은 그 문장 바로 뒤 */
+.fnt{border-bottom:2px solid var(--accent-soft);padding-bottom:1px;cursor:pointer;transition:background .12s,border-color .12s}
+.fnt:hover{background:#f2f4ff;border-bottom-color:var(--accent)}
+.fnt.on{background:#eaedfd;border-bottom-color:var(--accent);box-shadow:0 0 0 3px #eaedfd}
+/* 주석 번호는 로고(CitedPage[1])와 같은 대괄호 꼴 — 대괄호는 CSS로 붙인다 */
+sup.fnr{font-size:11.5px;margin-left:1px;line-height:0;letter-spacing:-.02em;vertical-align:baseline;position:relative;top:-.42em}
+sup.fnr a{text-decoration:none;color:var(--accent);font-weight:700;padding:0 1px;display:inline-block;line-height:1.35}
+sup.fnr a::before{content:"["}
+sup.fnr a::after{content:"]"}
+sup.fnr a:hover{text-decoration:underline}
+sup.fnr.on a{background:var(--accent);color:#fff;border-radius:2px;padding:0 3px}
+.fn{display:none}
+.fn.on{display:block;position:relative;margin:14px 0 18px;padding:14px 38px 14px 16px;background:var(--surface-2);border-left:2px solid var(--accent-soft);font-size:var(--fs-sm);line-height:1.7;color:var(--text-2)}
+.fn .num{color:var(--accent);font-weight:700;margin-right:5px}
+.fn .src{display:block;margin-top:10px;font-size:var(--fs-meta);color:var(--text-3)}
+.fn .src .lb{display:inline;margin-right:6px;color:var(--text-3)}
+.fn .src .sl{display:block;margin-top:3px}
+.fn .x{position:absolute;top:8px;right:8px;background:none;border:0;color:var(--text-4);cursor:pointer;padding:4px;line-height:0}
+</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-L4ZWFL73FF"></script><script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L4ZWFL73FF');
+  </script></head><body class><header class="site-header"><div class="container"><a href="/" class="logo">CitedPage<sup>[1]</sup></a><nav class="nav"><a href="/blog">블로그</a></nav></div></header><style>/* 글 페이지 — 주석 칸과 부품 (원고규격_v1 §3) */
+:root{--ink:#1a1a1a;--mid:#444;--dim:#767676;--line:#e5e5e5;--acc:#1b5e9c;--bg-soft:#f6f8fa}
+*{box-sizing:border-box}
+body{margin:0;font-family:Pretendard,system-ui,"Malgun Gothic",sans-serif;color:var(--ink);line-height:1.75;-webkit-text-size-adjust:100%}
+header.site,footer.site{max-width:1100px;margin:0 auto;padding:18px 20px;display:flex;gap:16px;align-items:center;justify-content:space-between}
+header.site .logo{font-weight:700;text-decoration:none;color:var(--ink)}
+header.site a,footer.site p{color:var(--mid);text-decoration:none;font-size:15px}
+.post{max-width:720px;margin:0 auto;padding:8px 20px 80px}
+.post .bc{font-size:14px;color:var(--dim);margin:8px 0 18px}
+.post .bc a{color:var(--dim);text-decoration:none}
+.post h1{font-size:30px;line-height:1.35;margin:0 0 10px;letter-spacing:-.01em}
+.post .meta{font-size:14px;color:var(--dim);margin:0 0 26px}
+.post .meta .upd{margin-left:10px}
+.post h2{font-size:23px;margin:46px 0 14px;letter-spacing:-.01em}
+.post h3{font-size:18.5px;margin:30px 0 10px}
+.post p{margin:0 0 17px}
+.post a{color:var(--acc)}
+/* 목차 */
+.toc{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:0 0 34px;background:var(--bg-soft)}
+.toc .lb{font-size:13px;color:var(--dim);margin:0 0 8px;font-weight:600}
+.toc ol{margin:0;padding-left:18px;font-size:15px}
+.toc li.d3{list-style:none;margin-left:-6px;color:var(--mid)}
+.toc a{text-decoration:none;color:var(--mid)}
+.toc a:hover{text-decoration:underline}
+/* 먼저 결론부터 */
+.concl{border:1px solid #cfe0f0;background:#f4f9ff;border-radius:12px;padding:18px 20px 6px;margin:0 0 34px}
+.concl .lb{font-size:13px;font-weight:700;color:var(--acc);margin:0 0 10px}
+.concl ol{margin:0;padding-left:20px}
+.concl li{margin:0 0 12px}
+/* 실무 카드 */
+.card{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:26px 0 30px}
+.card .row{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:12px 16px;border-top:1px solid var(--line);font-size:16px}
+.card .row:first-child{border-top:0}
+.card .row.do{background:#f4f9ff}
+.card .k{font-size:13px;font-weight:700;color:var(--dim);padding-top:3px}
+.card .row.do .k{color:var(--acc)}
+/* 직접 해 본 것 */
+.done{border-left:3px solid var(--acc);background:#fafafa;padding:14px 18px 2px;margin:26px 0 30px;border-radius:0 8px 8px 0}
+.done .lb{font-size:13px;font-weight:700;color:var(--acc);margin:0 0 6px}
+/* 그림 */
+figure.fg{margin:30px 0}
+figure.fg img{width:100%;height:auto;display:block}
+figure.fg .ph{background:var(--bg-soft);border:1px dashed var(--line);color:var(--dim);padding:48px 0;text-align:center;font-size:14px}
+figure.fg figcaption{font-size:14px;color:var(--dim);margin-top:10px}
+/* 자주 묻는 질문 */
+.faq{margin:34px 0}
+details.qa{border-top:1px solid var(--line)}
+details.qa:last-child{border-bottom:1px solid var(--line)}
+details.qa summary{cursor:pointer;list-style:none;padding:15px 28px 15px 0;position:relative}
+details.qa summary::-webkit-details-marker{display:none}
+details.qa summary h3{margin:0;font-size:17px;font-weight:600}
+details.qa summary::after{content:"";position:absolute;right:6px;top:22px;width:9px;height:9px;border-right:2px solid var(--dim);border-bottom:2px solid var(--dim);transform:rotate(45deg);transition:transform .15s}
+details.qa[open] summary::after{transform:rotate(-135deg)}
+.qa-a{padding:0 0 14px}
+.qa-a p{margin:0 0 12px}
+/* 주석 — 번호 앞 문장에 밑줄, 칸은 그 문장 바로 뒤 */
+.fnt{border-bottom:1.5px solid #b9d3ea;padding-bottom:1px}
+sup.fnr{font-size:12px;margin-left:1px}
+sup.fnr a{text-decoration:none;color:var(--acc);font-weight:700;padding:0 2px}
+sup.fnr.on a{background:var(--acc);color:#fff;border-radius:3px}
+.fn{display:none}
+.fn.on{display:block;position:relative;margin:14px 0 18px;padding:14px 40px 14px 16px;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;font-size:15.5px;line-height:1.7;color:var(--mid)}
+.fn .lb{display:block;font-size:12px;font-weight:700;color:var(--acc);margin-bottom:6px}
+.fn .src{display:block;margin-top:10px;font-size:13.5px}
+.fn .src .lb{display:inline;margin-right:6px}
+.fn .src .sl{display:block;margin-top:3px}
+.fn .x{position:absolute;top:8px;right:8px;background:none;border:0;color:var(--dim);cursor:pointer;padding:4px;line-height:0}
+/* 출처 목록 */
+.src-list{margin:56px 0 0;border-top:1px solid var(--line);padding-top:22px}
+.src-list h2{font-size:17px;margin:0 0 10px}
+.src-list ol{margin:0;padding-left:20px;font-size:14.5px;color:var(--mid)}
+.src-list li{margin:0 0 7px}
+@media (max-width:600px){
+  .post{padding:4px 16px 64px}.post h1{font-size:25px}.post h2{font-size:21px}
+  .card .row{grid-template-columns:1fr;gap:4px}
+}
+/* 목록 */
+.list .area{margin:44px 0}
+.list .area h2{font-size:21px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.list .cl{margin:22px 0}
+.list .cl h3{font-size:16.5px;margin:0 0 8px;color:var(--mid)}
+.list ul{list-style:none;margin:0;padding:0}
+.list li{padding:10px 0;border-top:1px solid var(--line)}
+.list li a{font-size:17px;text-decoration:none;font-weight:600}
+.list li a:hover{text-decoration:underline}
+.list li .tier{font-size:11.5px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-left:8px;vertical-align:2px}
+.list li .tier.draft{color:#9a6b00;border-color:#e8d2a0;background:#fff8e8}
+.list li.기둥 a{font-size:18px}
+.list li p.meta{margin:4px 0 0;font-size:14.5px}
+</style><main class="post list"><h1>블로그</h1><p class="meta">쓴 글 1편 · 계획 670편</p><section class="area"><h2>기술 SEO</h2><div class="cl"><h3>URL·사이트 구조 <span class="meta">1/11</span></h3><ul><li class="롱테일"><a href="/blog/canonical-tag">캐노니컬 태그(Canonical Tag)원리, 중요성 및 활용법</a><span class="tier">롱테일</span><p class="meta">캐노니컬 태그를 넣어도 구글이 다른 주소를 고를 때가 있습니다. 왜 그런지와 어디를 고쳐야 하는지 정리했습니다.</p></li></ul></div></section></main><footer class="site-footer"><div class="container"><p>© 2026 CITEDPAGE · citedpage.com</p></div></footer></body></html>

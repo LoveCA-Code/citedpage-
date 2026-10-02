@@ -1,16 +1,19 @@
 # 내려간 글·페이지의 옛 URL → 블로그 목록/홈 301
 # 2026-07-09 콘텐츠 리셋
-/blog/sample-post.html /blog/ 301
-/blog/sample-post /blog/ 301
-/blog/sample-post-guide.html /blog/ 301
-/blog/sample-post-guide /blog/ 301
-/blog/post-ai-citation.html /blog/ 301
-/blog/post-ai-citation /blog/ 301
-/blog/post-seo-guide.html /blog/ 301
-/blog/post-seo-guide /blog/ 301
+/blog/sample-post.html /blog 301
+/blog/sample-post /blog 301
+/blog/sample-post-guide.html /blog 301
+/blog/sample-post-guide /blog 301
+/blog/post-ai-citation.html /blog 301
+/blog/post-ai-citation /blog 301
+/blog/post-seo-guide.html /blog 301
+/blog/post-seo-guide /blog 301
 # 2026-09-15 개인 블로그 전환 — 필러 내림(재작성 예정), 문의 기능 제거
 # 주의: 같은 슬러그로 재발행하면 아래 두 줄을 지울 것
-/blog/what-is-seo.html /blog/ 301
-/blog/what-is-seo /blog/ 301
+/blog/what-is-seo.html /blog 301
+/blog/what-is-seo /blog 301
 /thanks.html / 301
 /thanks / 301
+
+# 2026-10-03 새 사이트(Astro)로 전환 - 목록은 /blog (슬래시 없음)
+/blog/ /blog 301
