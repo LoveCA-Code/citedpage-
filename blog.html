@@ -401,6 +401,16 @@ sup.fnr.on a{background:var(--accent);color:#fff;border-radius:2px;padding:0 3px
 /* 목차 레일 — 지금 읽는 꼭지 표시(스크롤 스파이) */
 .toc-rail a{padding:2px 0}
 .toc-rail a.active{color:var(--ink);font-weight:700}
+
+/* 넓은 화면에서 본문이 왼쪽으로 쏠리던 것 바로잡기 (2026-10-03)
+   예전 틀은 [본문 700 + 레일 300]만 가운데 정렬해서, 레일이 나타나는 1200px에서 본문이 160px 왼쪽으로 튀었다.
+   왼쪽에 같은 폭의 빈 칸을 두어 본문이 화면 한가운데 오게 한다 */
+@media (min-width:1201px){
+  /* 본문은 700 고정, 줄어드는 몫은 양옆이 받는다 (1300px 밑에서 본문이 쪼그라들던 문제) */
+  .p-article .article-shell{max-width:1300px;grid-template-columns:minmax(0,1fr) 700px minmax(0,1fr)}
+  .p-article .col-main{grid-column:2;border-left:1px solid var(--line)}
+  .p-article .side-team{grid-column:3}
+}
 </style><script async src="https://www.googletagmanager.com/gtag/js?id=G-L4ZWFL73FF"></script><script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
