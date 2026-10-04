@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>블로그 | CitedPage</title><meta name="description" content="검색과 AI 검색에 노출되는 글을 만드는 방법을 영역·주제별로 정리합니다."><link rel="canonical" href="https://citedpage.com/blog"><meta name="robots" content="noindex, nofollow"><meta property="og:type" content="website"><meta property="og:site_name" content="CitedPage"><meta property="og:title" content="블로그"><meta property="og:description" content="검색과 AI 검색에 노출되는 글을 만드는 방법을 영역·주제별로 정리합니다."><meta property="og:url" content="https://citedpage.com/blog"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://citedpage.com/img/og-default.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta name="twitter:card" content="summary_large_image"><link rel="alternate" type="application/rss+xml" title="CitedPage 블로그" href="/feed.xml"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>/* =========================================================================
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>도메인 포워딩이란? 301 리다이렉트와 무엇이 다른가 | CitedPage</title><meta name="description" content="도메인 포워딩은 301 리다이렉트가 아닙니다. 가비아 매뉴얼에 고정은 frame, 유동은 meta라고 적혀 있는데, 검색 결과가 갈리는 지점은"><link rel="canonical" href="https://citedpage.com/blog/domain-forwarding"><meta name="robots" content="noindex, nofollow"><meta property="og:type" content="article"><meta property="og:site_name" content="CitedPage"><meta property="og:title" content="도메인 포워딩이란? 301 리다이렉트와 무엇이 다른가"><meta property="og:description" content="도메인 포워딩은 301 리다이렉트가 아닙니다. 가비아 매뉴얼에 고정은 frame, 유동은 meta라고 적혀 있는데, 검색 결과가 갈리는 지점은"><meta property="og:url" content="https://citedpage.com/blog/domain-forwarding"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://citedpage.com/img/posts/domain-forwarding/cover.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta property="og:image:alt" content="도메인 포워딩이란? 301 리다이렉트와 무엇이 다른가"><meta name="twitter:card" content="summary_large_image"><link rel="alternate" type="application/rss+xml" title="CitedPage 블로그" href="/feed.xml"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>/* =========================================================================
    CitedPage — 테마 파일 (design system)
    이 파일 하나가 모든 페이지의 디자인을 통제합니다.
    색·글자크기·폰트를 바꾸려면 아래 :root 값만 고치세요 → 전 페이지 일괄 반영.
@@ -411,93 +411,106 @@ sup.fnr.on a{background:var(--accent);color:#fff;border-radius:2px;padding:0 3px
   .p-article .col-main{grid-column:2;border-left:1px solid var(--line)}
   .p-article .side-team{grid-column:3}
 }
-</style></head><body class><header class="site-header"><div class="container"><a href="/" class="logo">CitedPage<sup>[1]</sup></a><nav class="nav"><a href="/blog">블로그</a></nav></div></header><style>/* 글 페이지 — 주석 칸과 부품 (원고규격_v1 §3) */
-:root{--ink:#1a1a1a;--mid:#444;--dim:#767676;--line:#e5e5e5;--acc:#1b5e9c;--bg-soft:#f6f8fa}
-*{box-sizing:border-box}
-body{margin:0;font-family:Pretendard,system-ui,"Malgun Gothic",sans-serif;color:var(--ink);line-height:1.75;-webkit-text-size-adjust:100%}
-header.site,footer.site{max-width:1100px;margin:0 auto;padding:18px 20px;display:flex;gap:16px;align-items:center;justify-content:space-between}
-header.site .logo{font-weight:700;text-decoration:none;color:var(--ink)}
-header.site a,footer.site p{color:var(--mid);text-decoration:none;font-size:15px}
-.post{max-width:720px;margin:0 auto;padding:8px 20px 80px}
-.post .bc{font-size:14px;color:var(--dim);margin:8px 0 18px}
-.post .bc a{color:var(--dim);text-decoration:none}
-.post h1{font-size:30px;line-height:1.35;margin:0 0 10px;letter-spacing:-.01em}
-.post .meta{font-size:14px;color:var(--dim);margin:0 0 26px}
-.post .meta .upd{margin-left:10px}
-.post h2{font-size:23px;margin:46px 0 14px;letter-spacing:-.01em}
-.post h3{font-size:18.5px;margin:30px 0 10px}
-.post p{margin:0 0 17px}
-.post a{color:var(--acc)}
-/* 목차 */
-.toc{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:0 0 34px;background:var(--bg-soft)}
-.toc .lb{font-size:13px;color:var(--dim);margin:0 0 8px;font-weight:600}
-.toc ol{margin:0;padding-left:18px;font-size:15px}
-.toc li.d3{list-style:none;margin-left:-6px;color:var(--mid)}
-.toc a{text-decoration:none;color:var(--mid)}
-.toc a:hover{text-decoration:underline}
-/* 먼저 결론부터 */
-.concl{border:1px solid #cfe0f0;background:#f4f9ff;border-radius:12px;padding:18px 20px 6px;margin:0 0 34px}
-.concl .lb{font-size:13px;font-weight:700;color:var(--acc);margin:0 0 10px}
-.concl ol{margin:0;padding-left:20px}
-.concl li{margin:0 0 12px}
-/* 실무 카드 */
-.card{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:26px 0 30px}
-.card .row{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:12px 16px;border-top:1px solid var(--line);font-size:16px}
-.card .row:first-child{border-top:0}
-.card .row.do{background:#f4f9ff}
-.card .k{font-size:13px;font-weight:700;color:var(--dim);padding-top:3px}
-.card .row.do .k{color:var(--acc)}
-/* 직접 해 본 것 */
-.done{border-left:3px solid var(--acc);background:#fafafa;padding:14px 18px 2px;margin:26px 0 30px;border-radius:0 8px 8px 0}
-.done .lb{font-size:13px;font-weight:700;color:var(--acc);margin:0 0 6px}
-/* 그림 */
-figure.fg{margin:30px 0}
-figure.fg img{width:100%;height:auto;display:block}
-figure.fg .ph{background:var(--bg-soft);border:1px dashed var(--line);color:var(--dim);padding:48px 0;text-align:center;font-size:14px}
-figure.fg figcaption{font-size:14px;color:var(--dim);margin-top:10px}
-/* 자주 묻는 질문 */
-.faq{margin:34px 0}
-details.qa{border-top:1px solid var(--line)}
-details.qa:last-child{border-bottom:1px solid var(--line)}
-details.qa summary{cursor:pointer;list-style:none;padding:15px 28px 15px 0;position:relative}
-details.qa summary::-webkit-details-marker{display:none}
-details.qa summary h3{margin:0;font-size:17px;font-weight:600}
-details.qa summary::after{content:"";position:absolute;right:6px;top:22px;width:9px;height:9px;border-right:2px solid var(--dim);border-bottom:2px solid var(--dim);transform:rotate(45deg);transition:transform .15s}
-details.qa[open] summary::after{transform:rotate(-135deg)}
-.qa-a{padding:0 0 14px}
-.qa-a p{margin:0 0 12px}
-/* 주석 — 번호 앞 문장에 밑줄, 칸은 그 문장 바로 뒤 */
-.fnt{border-bottom:1.5px solid #b9d3ea;padding-bottom:1px}
-sup.fnr{font-size:12px;margin-left:1px}
-sup.fnr a{text-decoration:none;color:var(--acc);font-weight:700;padding:0 2px}
-sup.fnr.on a{background:var(--acc);color:#fff;border-radius:3px}
-.fn{display:none}
-.fn.on{display:block;position:relative;margin:14px 0 18px;padding:14px 40px 14px 16px;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;font-size:15.5px;line-height:1.7;color:var(--mid)}
-.fn .lb{display:block;font-size:12px;font-weight:700;color:var(--acc);margin-bottom:6px}
-.fn .src{display:block;margin-top:10px;font-size:13.5px}
-.fn .src .lb{display:inline;margin-right:6px}
-.fn .src .sl{display:block;margin-top:3px}
-.fn .x{position:absolute;top:8px;right:8px;background:none;border:0;color:var(--dim);cursor:pointer;padding:4px;line-height:0}
-/* 출처 목록 */
-.src-list{margin:56px 0 0;border-top:1px solid var(--line);padding-top:22px}
-.src-list h2{font-size:17px;margin:0 0 10px}
-.src-list ol{margin:0;padding-left:20px;font-size:14.5px;color:var(--mid)}
-.src-list li{margin:0 0 7px}
-@media (max-width:600px){
-  .post{padding:4px 16px 64px}.post h1{font-size:25px}.post h2{font-size:21px}
-  .card .row{grid-template-columns:1fr;gap:4px}
+</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"도메인 포워딩이란? 301 리다이렉트와 무엇이 다른가","description":"도메인 포워딩은 301 리다이렉트가 아닙니다. 가비아 매뉴얼에 고정은 frame, 유동은 meta라고 적혀 있는데, 검색 결과가 갈리는 지점은","image":"https://citedpage.com/img/posts/domain-forwarding/cover.png","datePublished":"2026-10-05T00:00:00.000Z","author":{"@type":"Person","name":"CitedPage","url":"https://citedpage.com/about"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://citedpage.com/blog/domain-forwarding"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"CitedPage","item":"https://citedpage.com/"},{"@type":"ListItem","position":2,"name":"블로그","item":"https://citedpage.com/blog"},{"@type":"ListItem","position":3,"name":"URL·사이트 구조","item":"https://citedpage.com/blog/domain-forwarding"}]}</script></head><body class="p-article"><header class="site-header"><div class="container"><a href="/" class="logo">CitedPage<sup>[1]</sup></a><nav class="nav"><a href="/blog">블로그</a></nav></div></header><style>/* 미리보기 배포에서만 보이는 띠 (2026-10-04) - 휴대폰에서 글 상태를 바로 알 수 있게 */
+.preview-bar{position:sticky;top:0;z-index:50;background:#111;color:#fff;
+  font-size:13px;line-height:1.5;padding:9px 16px;text-align:center;letter-spacing:-.01em}
+.preview-bar b{color:#ffd84d;font-weight:700}
+.preview-bar .st{display:inline-block;padding:1px 8px;border-radius:999px;
+  font-weight:600;font-size:12px;margin:0 2px}
+.preview-bar .st.초안{background:#4a4a4a;color:#fff}
+.preview-bar .st.예약{background:#2340ff;color:#fff}
+.preview-bar .st.공개됨{background:#1a7f37;color:#fff}
+@media (max-width:480px){.preview-bar{font-size:12px;padding:8px 12px}}</style><div class="preview-bar"><b>미리보기</b> · 이 쪽은 검색에 올라가지 않습니다 ·<span class="st 예약">예약</span> · 발행일 2026-10-05</div><div class="article-shell"><div class="col-main"><div class="posthead"><div class="narrow"><p class="crumb"><a href="/">홈</a> / <a href="/blog">블로그</a></p><p class="cat">URL·사이트 구조</p><h1>도메인 포워딩이란? 301 리다이렉트와 무엇이 다른가</h1><p class="byline"><b>CitedPage</b> · <time datetime="2026-10-05T00:00:00.000Z">2026-10-05</time></p><nav class="toc toc-mobile" aria-label="목차"><p class="label">목차</p><ol><li><a href="#s1"><span class="n">01</span>도메인 포워딩이란?</a></li><li><a href="#s3"><span class="n">02</span>검색엔진은 둘을 다르게 봅니다</a></li><li><a href="#s6"><span class="n">03</span>그럼 어떻게 해야 하나</a></li><li><a href="#s7"><span class="n">04</span>더 볼 것</a></li></ol></nav></div></div><div class="narrow"><div class="body"><div class="tldr"><p class="label">먼저 결론부터</p>
+<ol>
+<li>도메인 포워딩은 주소 하나를 다른 사이트로 보내 주는 호스팅 업체 기능이고, <strong>301 리다이렉트와는 다른 것입니다.</strong></li>
+<li>가비아 기준으로 고정은 frame, 유동은 meta입니다. <strong>구글은 이 가운데 유동만 영구 이동으로 받아들입니다.</strong></li>
+<li>검색에 제대로 잡히게 하시려면 <strong>포워딩 대신 301을 거셔야 합니다.</strong></li>
+</ol>
+</div>
+<h2 id="s1">도메인 포워딩이란?</h2>
+<p><span class="fnt">도메인 포워딩은 한 주소로 들어온 사람을 다른 사이트로 보내 주는 호스팅 업체의 부가 기능입니다.</span><sup class="fnr"><a href="#n1">1</a></sup><span class="fn" id="n1" role="note"><span class="tx"><b class="num">[1]</b>업체마다 파는 이름이 조금씩 다릅니다. 저희가 가비아, 카페24, 후이즈, 호스팅케이알, 아이네임즈, 닷홈, 메일플러그 일곱 곳의 도움말을 읽어 보니 대부분 “포워딩”이라 부르고 고정과 유동으로 나눕니다(2026년 10월 3일 확인). 업계 글이 쓰는 “마스킹”이나 “URL 숨김”이라는 말을 쓰는 업체는 한 곳도 없었습니다. 그래서 업체 화면에서 그 말을 찾으시면 안 나옵니다.</span><span class="src"><span class="lb">출처</span><span class="sl">[1] <a href="https://customer.gabia.com/manual/domain/287/1400" target="_blank" rel="noopener">가비아 고객센터 - 포워딩 설정하기 (도메인 매뉴얼)</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span> 새로 산 도메인을 이미 있는 홈페이지에 붙일 때 씁니다. 여기서는 고정과 유동의 차이, 그리고 검색엔진이 둘을 어떻게 보는지를 봅니다.</p>
+<h3 id="s2">고정과 유동은 주소창에서 갈립니다</h3>
+<p>업체는 포워딩을 두 가지로 나눠 팝니다. <span class="fnt">가비아 기준으로 <strong>고정</strong>은 주소창에 내 도메인이 그대로 남고, <strong>유동</strong>은 연결한 쪽 주소로 바뀝니다.</span><sup class="fnr"><a href="#n2">2</a></sup><span class="fn" id="n2" role="note"><span class="tx"><b class="num">[2]</b>가비아 매뉴얼의 문장입니다. “고정 포워딩(frame): 기본 도메인이 웹사이트로 연결될 때, 주소창에 기본 도메인명이 노출됩니다.” / “유동 포워딩(meta): 기본 도메인이 웹사이트로 연결될 때, 주소창에 연결한 도메인명이 노출됩니다.” 괄호 안의 frame과 meta가 구현 방식입니다. 저희가 읽은 일곱 곳 가운데 상태 코드를 적은 곳은 하나도 없었고, 구현 방식까지 밝힌 곳은 가비아와 후이즈뿐이었습니다.</span><span class="src"><span class="lb">출처</span><span class="sl">[1] <a href="https://customer.gabia.com/manual/domain/287/1400" target="_blank" rel="noopener">가비아 고객센터 - 포워딩 설정하기 (도메인 매뉴얼)</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span></p>
+<p>이름만 보면 취향 문제 같습니다. 그런데 매뉴얼 괄호 안에 구현 방식이 적혀 있습니다. <strong>고정은 frame, 유동은 meta입니다.</strong> 둘 다 301이 아닙니다.</p>
+<h2 id="s3">검색엔진은 둘을 다르게 봅니다</h2>
+<h3 id="s4">유동은 구글에서 영구 이동으로 읽힙니다</h3>
+<p><span class="fnt">구글은 즉시 실행되는 meta refresh를 영구 리디렉션으로 해석합니다.</span><sup class="fnr"><a href="#n3">3</a></sup><span class="fn" id="n3" role="note"><span class="tx"><b class="num">[3]</b>구글은 주소를 옮기는 방법을 올바르게 해석할 가능성이 높은 순서로 늘어놓는데, 301이 맨 위이고 meta refresh는 세 번째입니다. 그 meta refresh도 둘로 나눕니다. “즉시 meta refresh 리디렉션: 페이지가 브라우저에 로드되는 즉시 트리거됩니다. Google 검색은 즉시 meta refresh 리디렉션을 영구 리디렉션으로 해석합니다.” 0초가 아니라 몇 초 뒤에 넘기는 지연 방식은 임시로 봅니다. 업체 화면에서 지연 시간을 고르게 돼 있다면 0초로 두셔야 합니다.</span><span class="src"><span class="lb">출처</span><span class="sl">[2] <a href="https://developers.google.com/search/docs/crawling-indexing/301-redirects?hl=ko" target="_blank" rel="noopener">Google 검색 센터 - 리디렉션 및 Google 검색 · 한국어판(기계 번역)</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span> 그래서 유동 포워딩은 구글에서 그런대로 통합니다.</p>
+<p>고정은 사정이 다릅니다. <span class="fnt">프레임을 다룬 <strong>현행 구글 문서를 찾지 못했습니다.</strong></span><sup class="fnr"><a href="#n4">4</a></sup><span class="fn" id="n4" role="note"><span class="tx"><b class="num">[4]</b>저희가 구글 리디렉션 문서와 사이트 이전 문서를 열어 프레임과 마스킹을 찾아봤지만 두 낱말이 아예 없었습니다(2026년 10월 3일 확인). 프레임을 다루던 옛 도움말(support.google.com/webmasters/answer/34445)은 지금 404입니다. 그래서 이 글에서는 “구글이 프레임을 벌한다”고 쓰지 않습니다. 업계 글 열 곳 중 여섯 곳이 마스킹을 나쁘다고 하지만, 이유가 중복 콘텐츠와 클로킹으로 갈리고 공식 문서로 받칠 수 없었습니다. [2]</span><span class="src"><span class="lb">출처</span><span class="sl">[2] <a href="https://developers.google.com/search/docs/crawling-indexing/301-redirects?hl=ko" target="_blank" rel="noopener">Google 검색 센터 - 리디렉션 및 Google 검색 · 한국어판(기계 번역)</a></span><span class="sl">[3] <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes?hl=ko" target="_blank" rel="noopener">Google 검색 센터 - 사이트 이동 방법(URL 변경이 있는 경우) · 한국어판(기계 번역)</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span> 다만 주소창이 안 바뀐다는 것은 옛 주소에 보여 줄 내용이 없다는 뜻입니다.</p>
+<h3 id="s5">네이버에서는 고정이 특히 나쁩니다</h3>
+<p>네이버는 frame을 세 군데에서 경고합니다. <span class="fnt">메인 페이지를 감싸면 검색 노출이 안 되고, 콘텐츠를 감싸면 검색에 반영되지 않으며, 소유 확인도 막힙니다.</span><sup class="fnr"><a href="#n5">5</a></sup><span class="fn" id="n5" role="note"><span class="tx"><b class="num">[5]</b>네이버 안내의 문장을 그대로 옮기면 이렇습니다. “사이트 메인 페이지의 정보를 HTML frame 태그로 감싸고 있는지 확인하세요.” / “페이지 내의 모든 콘텐츠를 HTML frame 태그로 감싸고 있는지 확인하세요. 페이지의 중요한 콘텐츠는 frame 태그 대신 일반적인 HTML 태그를 사용해 주세요.” / “frame 태그 내부에 소유 확인용 HTML 태그를 넣었다면 지원이 불가능합니다.” 세 항목이 각각 메인 페이지 노출, 콘텐츠 반영, 소유 확인에 걸립니다.</span><span class="src"><span class="lb">출처</span><span class="sl">[4] <a href="https://searchadvisor.naver.com/guide/report-seo" target="_blank" rel="noopener">네이버 서치어드바이저 - 검색 노출/반영 안내(진단과 조치)</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span></p>
+<p>유동도 걸리는 데가 있습니다. <span class="fnt">네이버는 meta refresh로 넘기는 사이트는 <strong>소유 확인을 지원하지 않는다</strong>고 밝히고 있습니다.</span><sup class="fnr"><a href="#n6">6</a></sup><span class="fn" id="n6" role="note"><span class="tx"><b class="num">[6]</b>네이버 안내의 문장입니다. “사이트의 메인 페이지가 자바스크립트 혹은 meta refresh 기법을 사용하여 redirect 된다면 지원이 불가능합니다. HTTP redirect 방식을 사용해 주세요.” 다만 같은 안내의 다른 항목에서는 자바스크립트보다 meta refresh가 낫다고도 합니다. 소유 확인에서는 막히고 노출 쪽에서는 차선으로 쳐 준다는 뜻으로 읽으시면 됩니다. 네이버 고객센터도 “웹 프로토콜(protocol) 표준인 301 리다이렉트일 경우에만 소유확인을 보장합니다”라고 밝히고 있습니다. [4]</span><span class="src"><span class="lb">출처</span><span class="sl">[4] <a href="https://searchadvisor.naver.com/guide/report-seo" target="_blank" rel="noopener">네이버 서치어드바이저 - 검색 노출/반영 안내(진단과 조치)</a></span><span class="sl">[6] <a href="https://help.naver.com/service/30010/contents/17589?lang=ko" target="_blank" rel="noopener">네이버 서치어드바이저 고객센터 - 301 리다이렉트(redirect) 설정 소개</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span></p>
+<h2 id="s6">그럼 어떻게 해야 하나</h2>
+<p>검색을 생각하신다면 포워딩이 아니라 301입니다. <span class="fnt">구글도 네이버도 주소를 옮길 때 영구 리디렉션을 쓰라고 안내합니다.</span><sup class="fnr"><a href="#n7">7</a></sup><span class="fn" id="n7" role="note"><span class="tx"><b class="num">[7]</b>구글은 사이트 이전 문서에서 “가능하면 301, 308 등의 HTTP 영구 리디렉션을 사용하는 것이 좋습니다”라고 안내합니다. 네이버도 “여러 주소를 꼭 써야 한다면 대표(canonical) 주소로 301 redirect 해 주세요”라고 밝히고 있습니다. 두 곳 모두 포워딩이라는 말은 쓰지 않고 301을 가리킵니다. [3]</span><span class="src"><span class="lb">출처</span><span class="sl">[3] <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes?hl=ko" target="_blank" rel="noopener">Google 검색 센터 - 사이트 이동 방법(URL 변경이 있는 경우) · 한국어판(기계 번역)</a></span><span class="sl">[5] <a href="https://searchadvisor.naver.com/guide/seo-basic-http" target="_blank" rel="noopener">네이버 서치어드바이저 - 웹 표준 HTTP 안내</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span></p>
+<div class="chk"><p><b>무엇을</b> 도메인을 옮기거나 합치실 때는 포워딩 대신 서버에서 301 리다이렉트를 겁니다</p><p><b>안 하면</b> 고정이면 검색엔진이 옛 주소에서 내용을 못 찾고, 유동이면 네이버 소유 확인이 막힙니다</p><p><b>확인</b> 옛 주소를 브라우저에 넣고 개발자 도구 네트워크 탭에서 상태 코드가 301인지 봅니다. 주소창이 안 바뀌면 고정 포워딩입니다</p><p><b>안 되어 있다면</b> 업체 포워딩을 해지하고, 서버나 쓰시는 플랫폼의 리다이렉트 기능으로 301을 거시면 됩니다</p></div>
+<p>검색에 안 걸려도 되는 짧은 홍보용 주소라면 포워딩으로 충분합니다.</p>
+<h2 id="s7">더 볼 것</h2>
+<p>301을 거는 법과 302와의 차이는 <a href="/blog/301-redirect">301 리다이렉트</a>에서, 주소를 통째로 옮기는 일은 홈페이지 이전에서 다룹니다.</p></div></div><div class="narrow"><div class="refs"><p class="label">출처</p><ol><li><a href="https://customer.gabia.com/manual/domain/287/1400" target="_blank" rel="noopener">가비아 고객센터 - 포워딩 설정하기 (도메인 매뉴얼)</a></li><li><a href="https://developers.google.com/search/docs/crawling-indexing/301-redirects?hl=ko" target="_blank" rel="noopener">Google 검색 센터 - 리디렉션 및 Google 검색 · 한국어판(기계 번역)</a></li><li><a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes?hl=ko" target="_blank" rel="noopener">Google 검색 센터 - 사이트 이동 방법(URL 변경이 있는 경우) · 한국어판(기계 번역)</a></li><li><a href="https://searchadvisor.naver.com/guide/report-seo" target="_blank" rel="noopener">네이버 서치어드바이저 - 검색 노출/반영 안내(진단과 조치)</a></li><li><a href="https://searchadvisor.naver.com/guide/seo-basic-http" target="_blank" rel="noopener">네이버 서치어드바이저 - 웹 표준 HTTP 안내</a></li><li><a href="https://help.naver.com/service/30010/contents/17589?lang=ko" target="_blank" rel="noopener">네이버 서치어드바이저 고객센터 - 301 리다이렉트(redirect) 설정 소개</a></li></ol></div></div></div><aside class="side side-team" aria-label="목차"><nav class="toc-rail"><p class="label">목차</p><ol><li><a href="#s1"><span class="n">01</span>도메인 포워딩이란?</a></li><li><a href="#s3"><span class="n">02</span>검색엔진은 둘을 다르게 봅니다</a></li><li><a href="#s6"><span class="n">03</span>그럼 어떻게 해야 하나</a></li><li><a href="#s7"><span class="n">04</span>더 볼 것</a></li></ol></nav></aside></div><script>// 주석 — 번호를 누르면 그 문장 바로 뒤 칸이 펼쳐진다 (칸은 늘 글자로 페이지에 들어 있다)
+// 밑줄 친 문장을 눌러도 열린다 — 밑줄이 눌러 보고 싶게 보이기 때문 (사용자 2026-10-03)
+function 열기(sup) {
+  const a = sup?.querySelector("a");
+  const box = a && document.querySelector(a.getAttribute("href"));
+  if (!box) return;
+  const 열림 = box.classList.toggle("on");
+  sup.classList.toggle("on", 열림);
+  let 앞 = sup.previousElementSibling;
+  while (앞 && !앞.classList?.contains("fnt")) 앞 = 앞.previousElementSibling;
+  앞?.classList.toggle("on", 열림);
+  if (열림) box.scrollIntoView({ block: "nearest", behavior: "smooth" });
 }
-/* 목록 */
-.list .area{margin:44px 0}
-.list .area h2{font-size:21px;border-bottom:1px solid var(--line);padding-bottom:8px}
-.list .cl{margin:22px 0}
-.list .cl h3{font-size:16.5px;margin:0 0 8px;color:var(--mid)}
-.list ul{list-style:none;margin:0;padding:0}
-.list li{padding:10px 0;border-top:1px solid var(--line)}
-.list li a{font-size:17px;text-decoration:none;font-weight:600}
-.list li a:hover{text-decoration:underline}
-.list li .tier{font-size:11.5px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-left:8px;vertical-align:2px}
-.list li .tier.draft{color:#9a6b00;border-color:#e8d2a0;background:#fff8e8}
-.list li.기둥 a{font-size:18px}
-.list li p.meta{margin:4px 0 0;font-size:14.5px}
-</style><main class="post list"><h1>블로그</h1><p class="meta">쓴 글 6편 · 계획 670편</p><section class="area"><h2>SEO 기본·전략</h2></section><section class="area"><h2>키워드·콘텐츠 전략</h2></section><section class="area"><h2>기술 SEO</h2><div class="cl"><h3>URL·사이트 구조 <span class="meta">5/11</span></h3><ul><li class="롱테일"><a href="/blog/404-error">404 오류 해결 방법, 구글은 둘만 고치라고 합니다</a><span class="tier">롱테일</span><span class="tier draft">2026-10-07 예약</span><p class="meta">구글은 404를 대부분 고치지 말라고 합니다. 고쳐야 할 것은 둘뿐이고, 진짜 문제는 따로 있습니다. 검색 결과 687곳을 직접 받아 세어 봤습니다.</p></li><li class="롱테일"><a href="/blog/hreflang-tag">hreflang 태그란? 작동 조건과 흔한 실수</a><span class="tier">롱테일</span><span class="tier draft">2026-10-06 예약</span><p class="meta">hreflang은 같은 글의 다른 언어판을 알리는 표시입니다. 구글은 지금도 쓰지만 네이버는 보지 않고, 검색 결과 553곳을 직접 받아 보니 실수가 한 가지로 몰려 있었습니다.</p></li><li class="롱테일"><a href="/blog/canonical-tag">캐노니컬 태그(Canonical Tag)원리, 중요성 및 활용법</a><span class="tier">롱테일</span><p class="meta">캐노니컬 태그를 넣어도 구글이 다른 주소를 고를 때가 있습니다. 왜 그런지와 어디를 고쳐야 하는지 정리했습니다.</p></li><li class="롱테일"><a href="/blog/301-redirect">301 리다이렉트 뜻과 302와의 차이, 설정법</a><span class="tier">롱테일</span><p class="meta">301은 오류가 아닙니다. 그런데 걸어 둔 뒤에도 순위가 몇 달 동안 안 돌아오는 이유를 공식 문서와 집계로 정리했습니다.</p></li><li class="롱테일"><a href="/blog/domain-forwarding">도메인 포워딩이란? 301 리다이렉트와 무엇이 다른가</a><span class="tier">롱테일</span><span class="tier draft">2026-10-05 예약</span><p class="meta">호스팅 업체의 포워딩은 301 리다이렉트가 아닙니다. 가비아 기준으로 고정은 frame, 유동은 meta이고 검색엔진은 둘을 다르게 봅니다.</p></li></ul></div><div class="cl"><h3>색인·크롤링 제어 <span class="meta">1/14</span></h3><ul><li class="롱테일"><a href="/blog/google-index-request">구글 색인 요청, 눌러도 안 될 때 확인할 것</a><span class="tier">롱테일</span><span class="tier draft">초안</span><p class="meta">색인 요청을 눌렀는데 며칠이 지나도 그대로라면, 요청 말고 다른 곳을 봐야 합니다.</p></li></ul></div></section><section class="area"><h2>검색 도구·사이트 등록</h2></section><section class="area"><h2>링크·트래픽</h2></section><section class="area"><h2>GEO·AI 검색</h2></section><section class="area"><h2>측정·분석 도구</h2></section><section class="area"><h2>사이트 제작·플랫폼</h2></section><section class="area"><h2>AI 도구 활용</h2></section><section class="area"><h2>AI 개념·기술</h2></section><section class="area"><h2>기타</h2></section></main><footer class="site-footer"><div class="container"><p>© 2026 CITEDPAGE · citedpage.com</p></div></footer></body></html>
+
+document.addEventListener("click", (e) => {
+  const 밑줄 = e.target.closest(".fnt");
+  if (밑줄) {
+    let 뒤 = 밑줄.nextElementSibling;                 // 밑줄 바로 뒤의 주석 번호를 찾는다
+    while (뒤 && !뒤.classList?.contains("fnr")) 뒤 = 뒤.nextElementSibling;
+    if (뒤) { e.preventDefault(); 열기(뒤); return; }
+  }
+  const a = e.target.closest("sup.fnr a");
+  if (a) {
+    e.preventDefault();
+    const box = document.querySelector(a.getAttribute("href"));
+    if (!box) return;
+    const 열림 = box.classList.toggle("on");
+    const sup = a.closest("sup");
+    sup.classList.toggle("on", 열림);
+    // 번호 바로 앞의 밑줄 친 문장도 같이 켠다 (무엇에 대한 주석인지 보이게)
+    let 앞 = sup.previousElementSibling;
+    while (앞 && !앞.classList?.contains("fnt")) 앞 = 앞.previousElementSibling;
+    앞?.classList.toggle("on", 열림);
+    if (열림) box.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    return;
+  }
+  const x = e.target.closest(".fn .x");
+  if (x) {
+    const box = x.closest(".fn");
+    box.classList.remove("on");
+    const sup = document.querySelector(`sup.fnr a[href="#${box.id}"]`)?.closest("sup");
+    sup?.classList.remove("on");
+    let 앞 = sup?.previousElementSibling;
+    while (앞 && !앞.classList?.contains("fnt")) 앞 = 앞.previousElementSibling;
+    앞?.classList.remove("on");
+  }
+});
+// ?open=all — 세 겹 읽기(주석 전부 펼침)
+if (new URLSearchParams(location.search).get("open") === "all") {
+  document.querySelectorAll(".fn").forEach((b) => b.classList.add("on"));
+  document.querySelectorAll("sup.fnr, .fnt").forEach((e) => e.classList.add("on"));
+  document.querySelectorAll("details.qa").forEach((d) => (d.open = true));
+}
+
+// 목차 - 지금 읽는 꼭지를 굵게 (예전 디자인의 .active 규칙을 살림)
+const 꼭지 = [...document.querySelectorAll(".body h2[id]")];
+const 링크 = new Map([...document.querySelectorAll(".toc-rail a")].map((a) => [a.getAttribute("href").slice(1), a]));
+if (꼭지.length && 링크.size) {
+  let 멈춤 = false;
+  const 표시 = () => {
+    멈춤 = false;
+    let 지금 = 꼭지[0];
+    for (const h of 꼭지) { if (h.getBoundingClientRect().top <= 120) 지금 = h; else break; }
+    링크.forEach((a) => a.classList.remove("active"));
+    링크.get(지금.id)?.classList.add("active");
+  };
+  addEventListener("scroll", () => { if (!멈춤) { 멈춤 = true; requestAnimationFrame(표시); } }, { passive: true });
+  표시();
+}
+</script><footer class="site-footer"><div class="container"><p>© 2026 CITEDPAGE · citedpage.com</p></div></footer></body></html>

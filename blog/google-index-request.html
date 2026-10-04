@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>블로그 | CitedPage</title><meta name="description" content="검색과 AI 검색에 노출되는 글을 만드는 방법을 영역·주제별로 정리합니다."><link rel="canonical" href="https://citedpage.com/blog"><meta name="robots" content="noindex, nofollow"><meta property="og:type" content="website"><meta property="og:site_name" content="CitedPage"><meta property="og:title" content="블로그"><meta property="og:description" content="검색과 AI 검색에 노출되는 글을 만드는 방법을 영역·주제별로 정리합니다."><meta property="og:url" content="https://citedpage.com/blog"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://citedpage.com/img/og-default.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta name="twitter:card" content="summary_large_image"><link rel="alternate" type="application/rss+xml" title="CitedPage 블로그" href="/feed.xml"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>/* =========================================================================
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>구글 색인 요청, 눌러도 안 될 때 확인할 것 | CitedPage</title><meta name="description" content="구글 색인 요청은 서치 콘솔 URL 검사에서 누릅니다. [확인 필요: 하루 요청 한도] 요청은 순서를 당기는 신호일 뿐이라 글 자체가 색인 기준을 넘겨야 합니다."><link rel="canonical" href="https://citedpage.com/blog/google-index-request"><meta name="robots" content="noindex, nofollow"><meta property="og:type" content="article"><meta property="og:site_name" content="CitedPage"><meta property="og:title" content="구글 색인 요청, 눌러도 안 될 때 확인할 것"><meta property="og:description" content="구글 색인 요청은 서치 콘솔 URL 검사에서 누릅니다. [확인 필요: 하루 요청 한도] 요청은 순서를 당기는 신호일 뿐이라 글 자체가 색인 기준을 넘겨야 합니다."><meta property="og:url" content="https://citedpage.com/blog/google-index-request"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://citedpage.com/img/posts/google-index-request/cover.jpg"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta property="og:image:alt" content="구글 색인 요청, 눌러도 안 될 때 확인할 것"><meta name="twitter:card" content="summary_large_image"><link rel="alternate" type="application/rss+xml" title="CitedPage 블로그" href="/feed.xml"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>/* =========================================================================
    CitedPage — 테마 파일 (design system)
    이 파일 하나가 모든 페이지의 디자인을 통제합니다.
    색·글자크기·폰트를 바꾸려면 아래 :root 값만 고치세요 → 전 페이지 일괄 반영.
@@ -411,93 +411,115 @@ sup.fnr.on a{background:var(--accent);color:#fff;border-radius:2px;padding:0 3px
   .p-article .col-main{grid-column:2;border-left:1px solid var(--line)}
   .p-article .side-team{grid-column:3}
 }
-</style></head><body class><header class="site-header"><div class="container"><a href="/" class="logo">CitedPage<sup>[1]</sup></a><nav class="nav"><a href="/blog">블로그</a></nav></div></header><style>/* 글 페이지 — 주석 칸과 부품 (원고규격_v1 §3) */
-:root{--ink:#1a1a1a;--mid:#444;--dim:#767676;--line:#e5e5e5;--acc:#1b5e9c;--bg-soft:#f6f8fa}
-*{box-sizing:border-box}
-body{margin:0;font-family:Pretendard,system-ui,"Malgun Gothic",sans-serif;color:var(--ink);line-height:1.75;-webkit-text-size-adjust:100%}
-header.site,footer.site{max-width:1100px;margin:0 auto;padding:18px 20px;display:flex;gap:16px;align-items:center;justify-content:space-between}
-header.site .logo{font-weight:700;text-decoration:none;color:var(--ink)}
-header.site a,footer.site p{color:var(--mid);text-decoration:none;font-size:15px}
-.post{max-width:720px;margin:0 auto;padding:8px 20px 80px}
-.post .bc{font-size:14px;color:var(--dim);margin:8px 0 18px}
-.post .bc a{color:var(--dim);text-decoration:none}
-.post h1{font-size:30px;line-height:1.35;margin:0 0 10px;letter-spacing:-.01em}
-.post .meta{font-size:14px;color:var(--dim);margin:0 0 26px}
-.post .meta .upd{margin-left:10px}
-.post h2{font-size:23px;margin:46px 0 14px;letter-spacing:-.01em}
-.post h3{font-size:18.5px;margin:30px 0 10px}
-.post p{margin:0 0 17px}
-.post a{color:var(--acc)}
-/* 목차 */
-.toc{border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:0 0 34px;background:var(--bg-soft)}
-.toc .lb{font-size:13px;color:var(--dim);margin:0 0 8px;font-weight:600}
-.toc ol{margin:0;padding-left:18px;font-size:15px}
-.toc li.d3{list-style:none;margin-left:-6px;color:var(--mid)}
-.toc a{text-decoration:none;color:var(--mid)}
-.toc a:hover{text-decoration:underline}
-/* 먼저 결론부터 */
-.concl{border:1px solid #cfe0f0;background:#f4f9ff;border-radius:12px;padding:18px 20px 6px;margin:0 0 34px}
-.concl .lb{font-size:13px;font-weight:700;color:var(--acc);margin:0 0 10px}
-.concl ol{margin:0;padding-left:20px}
-.concl li{margin:0 0 12px}
-/* 실무 카드 */
-.card{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:26px 0 30px}
-.card .row{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:12px 16px;border-top:1px solid var(--line);font-size:16px}
-.card .row:first-child{border-top:0}
-.card .row.do{background:#f4f9ff}
-.card .k{font-size:13px;font-weight:700;color:var(--dim);padding-top:3px}
-.card .row.do .k{color:var(--acc)}
-/* 직접 해 본 것 */
-.done{border-left:3px solid var(--acc);background:#fafafa;padding:14px 18px 2px;margin:26px 0 30px;border-radius:0 8px 8px 0}
-.done .lb{font-size:13px;font-weight:700;color:var(--acc);margin:0 0 6px}
-/* 그림 */
-figure.fg{margin:30px 0}
-figure.fg img{width:100%;height:auto;display:block}
-figure.fg .ph{background:var(--bg-soft);border:1px dashed var(--line);color:var(--dim);padding:48px 0;text-align:center;font-size:14px}
-figure.fg figcaption{font-size:14px;color:var(--dim);margin-top:10px}
-/* 자주 묻는 질문 */
-.faq{margin:34px 0}
-details.qa{border-top:1px solid var(--line)}
-details.qa:last-child{border-bottom:1px solid var(--line)}
-details.qa summary{cursor:pointer;list-style:none;padding:15px 28px 15px 0;position:relative}
-details.qa summary::-webkit-details-marker{display:none}
-details.qa summary h3{margin:0;font-size:17px;font-weight:600}
-details.qa summary::after{content:"";position:absolute;right:6px;top:22px;width:9px;height:9px;border-right:2px solid var(--dim);border-bottom:2px solid var(--dim);transform:rotate(45deg);transition:transform .15s}
-details.qa[open] summary::after{transform:rotate(-135deg)}
-.qa-a{padding:0 0 14px}
-.qa-a p{margin:0 0 12px}
-/* 주석 — 번호 앞 문장에 밑줄, 칸은 그 문장 바로 뒤 */
-.fnt{border-bottom:1.5px solid #b9d3ea;padding-bottom:1px}
-sup.fnr{font-size:12px;margin-left:1px}
-sup.fnr a{text-decoration:none;color:var(--acc);font-weight:700;padding:0 2px}
-sup.fnr.on a{background:var(--acc);color:#fff;border-radius:3px}
-.fn{display:none}
-.fn.on{display:block;position:relative;margin:14px 0 18px;padding:14px 40px 14px 16px;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;font-size:15.5px;line-height:1.7;color:var(--mid)}
-.fn .lb{display:block;font-size:12px;font-weight:700;color:var(--acc);margin-bottom:6px}
-.fn .src{display:block;margin-top:10px;font-size:13.5px}
-.fn .src .lb{display:inline;margin-right:6px}
-.fn .src .sl{display:block;margin-top:3px}
-.fn .x{position:absolute;top:8px;right:8px;background:none;border:0;color:var(--dim);cursor:pointer;padding:4px;line-height:0}
-/* 출처 목록 */
-.src-list{margin:56px 0 0;border-top:1px solid var(--line);padding-top:22px}
-.src-list h2{font-size:17px;margin:0 0 10px}
-.src-list ol{margin:0;padding-left:20px;font-size:14.5px;color:var(--mid)}
-.src-list li{margin:0 0 7px}
-@media (max-width:600px){
-  .post{padding:4px 16px 64px}.post h1{font-size:25px}.post h2{font-size:21px}
-  .card .row{grid-template-columns:1fr;gap:4px}
+</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"구글 색인 요청, 눌러도 안 될 때 확인할 것","description":"구글 색인 요청은 서치 콘솔 URL 검사에서 누릅니다. [확인 필요: 하루 요청 한도] 요청은 순서를 당기는 신호일 뿐이라 글 자체가 색인 기준을 넘겨야 합니다.","image":"https://citedpage.com/img/posts/google-index-request/cover.jpg","author":{"@type":"Person","name":"CitedPage","url":"https://citedpage.com/about"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://citedpage.com/blog/google-index-request"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"CitedPage","item":"https://citedpage.com/"},{"@type":"ListItem","position":2,"name":"블로그","item":"https://citedpage.com/blog"},{"@type":"ListItem","position":3,"name":"색인·크롤링 제어","item":"https://citedpage.com/blog/google-index-request"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"색인 요청을 눌렀는데 2주째 그대로입니다","acceptedAnswer":{"@type":"Answer","text":"요청을 더 누르지 말고 글을 손보시면 됩니다. [확인 필요: 이유와 기준]"}},{"@type":"Question","name":"하루에 몇 번까지 요청할 수 있나요","acceptedAnswer":{"@type":"Answer","text":"[확인 필요: 하루 한도] 한도를 넘기면 다음 날 다시 쓸 수 있습니다."}}]}</script></head><body class="p-article"><header class="site-header"><div class="container"><a href="/" class="logo">CitedPage<sup>[1]</sup></a><nav class="nav"><a href="/blog">블로그</a></nav></div></header><style>/* 미리보기 배포에서만 보이는 띠 (2026-10-04) - 휴대폰에서 글 상태를 바로 알 수 있게 */
+.preview-bar{position:sticky;top:0;z-index:50;background:#111;color:#fff;
+  font-size:13px;line-height:1.5;padding:9px 16px;text-align:center;letter-spacing:-.01em}
+.preview-bar b{color:#ffd84d;font-weight:700}
+.preview-bar .st{display:inline-block;padding:1px 8px;border-radius:999px;
+  font-weight:600;font-size:12px;margin:0 2px}
+.preview-bar .st.초안{background:#4a4a4a;color:#fff}
+.preview-bar .st.예약{background:#2340ff;color:#fff}
+.preview-bar .st.공개됨{background:#1a7f37;color:#fff}
+@media (max-width:480px){.preview-bar{font-size:12px;padding:8px 12px}}</style><div class="preview-bar"><b>미리보기</b> · 이 쪽은 검색에 올라가지 않습니다 ·<span class="st 초안">초안</span></div><div class="article-shell"><div class="col-main"><div class="posthead"><div class="narrow"><p class="crumb"><a href="/">홈</a> / <a href="/blog">블로그</a></p><p class="cat">색인·크롤링 제어</p><h1>구글 색인 요청, 눌러도 안 될 때 확인할 것</h1><p class="byline"><b>CitedPage</b> · 초안</p><nav class="toc toc-mobile" aria-label="목차"><p class="label">목차</p><ol><li><a href="#s1"><span class="n">01</span>색인 요청이란?</a></li><li><a href="#s3"><span class="n">02</span>눌러도 안 될 때</a></li><li><a href="#s7"><span class="n">03</span>자주 묻는 질문</a></li></ol></nav></div></div><div class="narrow"><div class="body"><!-- 이 파일은 원고규격_v1 검증용 뼈대 예시입니다. [확인 필요] 표시는 공식 문서에서 숫자를 확인한 뒤 채웁니다. -->
+<div class="tldr"><p class="label">먼저 결론부터</p>
+<ol>
+<li>구글 색인 요청은 서치 콘솔 URL 검사에서 누르는 버튼이고, <strong>색인을 보장하는 버튼이 아닙니다.</strong></li>
+<li>요청을 눌렀다면 더 누르지 않으셔도 됩니다. <strong>같은 주소를 반복해서 요청해도 순서가 더 당겨지지 않습니다.</strong></li>
+<li>며칠이 지나도 그대로라면 요청이 아니라 글을 손보셔야 합니다. <strong>구글은 색인할 가치가 없다고 판단한 글을 요청만으로 넣지 않습니다.</strong></li>
+</ol>
+</div>
+<h2 id="s1">색인 요청이란?</h2>
+<p>구글 색인 요청은 <strong>새 글이나 고친 글을 다시 와서 보라고 구글에 알리는 기능</strong>입니다. 서치 콘솔(Search Console)의 URL 검사에서 누릅니다. 그러니까 순서를 기다리는 줄에서 손을 드는 셈입니다. 구글은 <span class="fnt">크롤링</span>할 주소를 스스로 정해 줄을 세우는데, 요청은 그 줄에서 내 글을 앞으로 당겨 달라는 신호이기 때문입니다.<sup class="fnr"><a href="#n1">1</a></sup><span class="fn" id="n1" role="note"><span class="tx"><b class="num">[1]</b>구글은 요청을 “다시 크롤링해 달라는 신호”로 받습니다.</span><span class="src"><span class="lb">출처</span><span class="sl">[2] <a href="https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl" target="_blank" rel="noopener">Google 검색 센터 - 색인 생성 요청 가이드라인</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span> 여기서는 요청을 누르는 방법과, 눌러도 색인되지 않을 때 볼 곳을 다룹니다.</p>
+<h3 id="s2">색인 요청하는 법 - 서치 콘솔 URL 검사에서 한 번만 누르면 됩니다</h3>
+<p>색인 요청은 서치 콘솔 URL 검사 화면에서 버튼 한 번으로 끝납니다. 글을 올린 직후에 눌러 두면 됩니다.</p>
+<div class="chk"><p><b>무엇을</b> 서치 콘솔 위쪽 검사 칸에 글 주소를 그대로 넣고, 결과 화면에서 “색인 생성 요청”을 누릅니다</p><p><b>안 하면</b> 구글이 스스로 글을 발견할 때까지 기다려야 하고, 링크가 적은 새 사이트는 그 기간이 깁니다</p><p><b>확인</b> 같은 화면에서 “URL이 Google에 등록되어 있음”이 보이면 색인된 것입니다</p><p><b>안 되어 있다면</b> 하루 뒤에 다시 확인하고, [확인 필요: 기간]이 지나도 그대로면 글 쪽을 봅니다</p></div>
+<figure class="fg"><img src="/img/posts/google-index-request/flow.webp" alt="구글이 글을 발견하고 크롤링한 뒤 색인하는 세 단계와, 색인 요청이 작용하는 자리" loading="lazy" decoding="async"><figcaption>요청은 두 번째 단계의 순서를 당기는 것이고, 세 번째 단계의 판단은 바꾸지 않습니다</figcaption></figure>
+<h2 id="s3">눌러도 안 될 때</h2>
+<p>요청을 눌러도 색인이 안 되는 까닭은 대개 요청 쪽이 아니라 <strong>글 쪽</strong>에 있습니다. 구글은 발견한 주소를 모두 색인하지 않고, 색인할 값이 있는지 판단하기 때문입니다. 아래에서 기다리는 기간, 글에서 볼 곳, 막혀 있는 설정 세 가지를 차례로 보겠습니다.</p>
+<h3 id="s4">기다리는 기간 - 하루이틀 안에 되지 않는 것은 정상입니다</h3>
+<p>색인 요청의 결과는 하루이틀에 나오지 않는 경우가 많습니다. [확인 필요: 공식 문서의 표현과 기간]</p>
+<h3 id="s5">글에서 볼 곳 - 내용이 겹치거나 얇은 글은 요청해도 색인되지 않습니다</h3>
+<p>구글이 색인을 보류하는 글에는 공통점이 있습니다. [확인 필요: 공식 문서 기준] 이럴 때는 색인되지 않는 글을 고치는 방법을 따라 글을 손보셔야 합니다.</p>
+<h3 id="s6">막혀 있는 설정 - robots.txt와 noindex를 먼저 확인하셔야 합니다</h3>
+<p>요청 전에 내 사이트가 수집을 막고 있는지 확인하셔야 합니다. 막아 둔 글은 요청해도 색인되지 않기 때문입니다. <a href="/blog/robots-txt-crawl-block">robots.txt로 수집을 막는 방법</a>을 보면 지금 설정이 어떤 상태인지 알 수 있습니다.</p>
+<div class="box done"><p class="label">직접 해 본 것</p>
+<p>2026년 9월 15일에 발행한 글 하나를 내리고 301로 돌렸더니, 검색 결과에서 사라지기까지 6일이 걸렸습니다. 색인에 넣는 쪽도 빼는 쪽도 요청만으로 즉시 되지 않았습니다.</p>
+</div>
+<h2 id="s7">자주 묻는 질문</h2>
+<div class="faq">
+<details class="qa"><summary><h3>색인 요청을 눌렀는데 2주째 그대로입니다</h3></summary><div class="qa-a">
+<p>요청을 더 누르지 말고 글을 손보시면 됩니다. [확인 필요: 이유와 기준]</p>
+</div></details>
+<details class="qa"><summary><h3>하루에 몇 번까지 요청할 수 있나요</h3></summary><div class="qa-a">
+<p>[확인 필요: 하루 한도] 한도를 넘기면 다음 날 다시 쓸 수 있습니다.</p>
+</div></details>
+</div></div></div><div class="narrow"><div class="refs"><p class="label">출처</p><ol><li><a href="https://support.google.com/webmasters/answer/9012289" target="_blank" rel="noopener">Google 검색 센터 - URL 검사 도구</a></li><li><a href="https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl" target="_blank" rel="noopener">Google 검색 센터 - 색인 생성 요청 가이드라인</a></li></ol></div></div></div><aside class="side side-team" aria-label="목차"><nav class="toc-rail"><p class="label">목차</p><ol><li><a href="#s1"><span class="n">01</span>색인 요청이란?</a></li><li><a href="#s3"><span class="n">02</span>눌러도 안 될 때</a></li><li><a href="#s7"><span class="n">03</span>자주 묻는 질문</a></li></ol></nav></aside></div><script>// 주석 — 번호를 누르면 그 문장 바로 뒤 칸이 펼쳐진다 (칸은 늘 글자로 페이지에 들어 있다)
+// 밑줄 친 문장을 눌러도 열린다 — 밑줄이 눌러 보고 싶게 보이기 때문 (사용자 2026-10-03)
+function 열기(sup) {
+  const a = sup?.querySelector("a");
+  const box = a && document.querySelector(a.getAttribute("href"));
+  if (!box) return;
+  const 열림 = box.classList.toggle("on");
+  sup.classList.toggle("on", 열림);
+  let 앞 = sup.previousElementSibling;
+  while (앞 && !앞.classList?.contains("fnt")) 앞 = 앞.previousElementSibling;
+  앞?.classList.toggle("on", 열림);
+  if (열림) box.scrollIntoView({ block: "nearest", behavior: "smooth" });
 }
-/* 목록 */
-.list .area{margin:44px 0}
-.list .area h2{font-size:21px;border-bottom:1px solid var(--line);padding-bottom:8px}
-.list .cl{margin:22px 0}
-.list .cl h3{font-size:16.5px;margin:0 0 8px;color:var(--mid)}
-.list ul{list-style:none;margin:0;padding:0}
-.list li{padding:10px 0;border-top:1px solid var(--line)}
-.list li a{font-size:17px;text-decoration:none;font-weight:600}
-.list li a:hover{text-decoration:underline}
-.list li .tier{font-size:11.5px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-left:8px;vertical-align:2px}
-.list li .tier.draft{color:#9a6b00;border-color:#e8d2a0;background:#fff8e8}
-.list li.기둥 a{font-size:18px}
-.list li p.meta{margin:4px 0 0;font-size:14.5px}
-</style><main class="post list"><h1>블로그</h1><p class="meta">쓴 글 6편 · 계획 670편</p><section class="area"><h2>SEO 기본·전략</h2></section><section class="area"><h2>키워드·콘텐츠 전략</h2></section><section class="area"><h2>기술 SEO</h2><div class="cl"><h3>URL·사이트 구조 <span class="meta">5/11</span></h3><ul><li class="롱테일"><a href="/blog/404-error">404 오류 해결 방법, 구글은 둘만 고치라고 합니다</a><span class="tier">롱테일</span><span class="tier draft">2026-10-07 예약</span><p class="meta">구글은 404를 대부분 고치지 말라고 합니다. 고쳐야 할 것은 둘뿐이고, 진짜 문제는 따로 있습니다. 검색 결과 687곳을 직접 받아 세어 봤습니다.</p></li><li class="롱테일"><a href="/blog/hreflang-tag">hreflang 태그란? 작동 조건과 흔한 실수</a><span class="tier">롱테일</span><span class="tier draft">2026-10-06 예약</span><p class="meta">hreflang은 같은 글의 다른 언어판을 알리는 표시입니다. 구글은 지금도 쓰지만 네이버는 보지 않고, 검색 결과 553곳을 직접 받아 보니 실수가 한 가지로 몰려 있었습니다.</p></li><li class="롱테일"><a href="/blog/canonical-tag">캐노니컬 태그(Canonical Tag)원리, 중요성 및 활용법</a><span class="tier">롱테일</span><p class="meta">캐노니컬 태그를 넣어도 구글이 다른 주소를 고를 때가 있습니다. 왜 그런지와 어디를 고쳐야 하는지 정리했습니다.</p></li><li class="롱테일"><a href="/blog/301-redirect">301 리다이렉트 뜻과 302와의 차이, 설정법</a><span class="tier">롱테일</span><p class="meta">301은 오류가 아닙니다. 그런데 걸어 둔 뒤에도 순위가 몇 달 동안 안 돌아오는 이유를 공식 문서와 집계로 정리했습니다.</p></li><li class="롱테일"><a href="/blog/domain-forwarding">도메인 포워딩이란? 301 리다이렉트와 무엇이 다른가</a><span class="tier">롱테일</span><span class="tier draft">2026-10-05 예약</span><p class="meta">호스팅 업체의 포워딩은 301 리다이렉트가 아닙니다. 가비아 기준으로 고정은 frame, 유동은 meta이고 검색엔진은 둘을 다르게 봅니다.</p></li></ul></div><div class="cl"><h3>색인·크롤링 제어 <span class="meta">1/14</span></h3><ul><li class="롱테일"><a href="/blog/google-index-request">구글 색인 요청, 눌러도 안 될 때 확인할 것</a><span class="tier">롱테일</span><span class="tier draft">초안</span><p class="meta">색인 요청을 눌렀는데 며칠이 지나도 그대로라면, 요청 말고 다른 곳을 봐야 합니다.</p></li></ul></div></section><section class="area"><h2>검색 도구·사이트 등록</h2></section><section class="area"><h2>링크·트래픽</h2></section><section class="area"><h2>GEO·AI 검색</h2></section><section class="area"><h2>측정·분석 도구</h2></section><section class="area"><h2>사이트 제작·플랫폼</h2></section><section class="area"><h2>AI 도구 활용</h2></section><section class="area"><h2>AI 개념·기술</h2></section><section class="area"><h2>기타</h2></section></main><footer class="site-footer"><div class="container"><p>© 2026 CITEDPAGE · citedpage.com</p></div></footer></body></html>
+
+document.addEventListener("click", (e) => {
+  const 밑줄 = e.target.closest(".fnt");
+  if (밑줄) {
+    let 뒤 = 밑줄.nextElementSibling;                 // 밑줄 바로 뒤의 주석 번호를 찾는다
+    while (뒤 && !뒤.classList?.contains("fnr")) 뒤 = 뒤.nextElementSibling;
+    if (뒤) { e.preventDefault(); 열기(뒤); return; }
+  }
+  const a = e.target.closest("sup.fnr a");
+  if (a) {
+    e.preventDefault();
+    const box = document.querySelector(a.getAttribute("href"));
+    if (!box) return;
+    const 열림 = box.classList.toggle("on");
+    const sup = a.closest("sup");
+    sup.classList.toggle("on", 열림);
+    // 번호 바로 앞의 밑줄 친 문장도 같이 켠다 (무엇에 대한 주석인지 보이게)
+    let 앞 = sup.previousElementSibling;
+    while (앞 && !앞.classList?.contains("fnt")) 앞 = 앞.previousElementSibling;
+    앞?.classList.toggle("on", 열림);
+    if (열림) box.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    return;
+  }
+  const x = e.target.closest(".fn .x");
+  if (x) {
+    const box = x.closest(".fn");
+    box.classList.remove("on");
+    const sup = document.querySelector(`sup.fnr a[href="#${box.id}"]`)?.closest("sup");
+    sup?.classList.remove("on");
+    let 앞 = sup?.previousElementSibling;
+    while (앞 && !앞.classList?.contains("fnt")) 앞 = 앞.previousElementSibling;
+    앞?.classList.remove("on");
+  }
+});
+// ?open=all — 세 겹 읽기(주석 전부 펼침)
+if (new URLSearchParams(location.search).get("open") === "all") {
+  document.querySelectorAll(".fn").forEach((b) => b.classList.add("on"));
+  document.querySelectorAll("sup.fnr, .fnt").forEach((e) => e.classList.add("on"));
+  document.querySelectorAll("details.qa").forEach((d) => (d.open = true));
+}
+
+// 목차 - 지금 읽는 꼭지를 굵게 (예전 디자인의 .active 규칙을 살림)
+const 꼭지 = [...document.querySelectorAll(".body h2[id]")];
+const 링크 = new Map([...document.querySelectorAll(".toc-rail a")].map((a) => [a.getAttribute("href").slice(1), a]));
+if (꼭지.length && 링크.size) {
+  let 멈춤 = false;
+  const 표시 = () => {
+    멈춤 = false;
+    let 지금 = 꼭지[0];
+    for (const h of 꼭지) { if (h.getBoundingClientRect().top <= 120) 지금 = h; else break; }
+    링크.forEach((a) => a.classList.remove("active"));
+    링크.get(지금.id)?.classList.add("active");
+  };
+  addEventListener("scroll", () => { if (!멈춤) { 멈춤 = true; requestAnimationFrame(표시); } }, { passive: true });
+  표시();
+}
+</script><footer class="site-footer"><div class="container"><p>© 2026 CITEDPAGE · citedpage.com</p></div></footer></body></html>
