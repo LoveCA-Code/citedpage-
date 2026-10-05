@@ -432,7 +432,33 @@ sup.fnr.on a{background:var(--accent);color:#fff;border-radius:2px;padding:0 3px
 <h3 id="s2">고정과 유동은 주소창에서 갈립니다</h3>
 <p>업체는 포워딩을 두 가지로 나눠 팝니다. <span class="fnt">가비아 기준으로 <strong>고정</strong>은 주소창에 내 도메인이 그대로 남고, <strong>유동</strong>은 연결한 쪽 주소로 바뀝니다.</span><sup class="fnr"><a href="#n2">2</a></sup><span class="fn" id="n2" role="note"><span class="tx"><b class="num">[2]</b>가비아 매뉴얼의 문장입니다. “고정 포워딩(frame): 기본 도메인이 웹사이트로 연결될 때, 주소창에 기본 도메인명이 노출됩니다.” / “유동 포워딩(meta): 기본 도메인이 웹사이트로 연결될 때, 주소창에 연결한 도메인명이 노출됩니다.” 괄호 안의 frame과 meta가 구현 방식입니다. 저희가 읽은 일곱 곳 가운데 상태 코드를 적은 곳은 하나도 없었고, 구현 방식까지 밝힌 곳은 가비아와 후이즈뿐이었습니다.</span><span class="src"><span class="lb">출처</span><span class="sl">[1] <a href="https://customer.gabia.com/manual/domain/287/1400" target="_blank" rel="noopener">가비아 고객센터 - 포워딩 설정하기 (도메인 매뉴얼)</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span></p>
 <p>이름만 보면 취향 문제 같습니다. 그런데 매뉴얼 괄호 안에 구현 방식이 적혀 있습니다. <strong>고정은 frame, 유동은 meta입니다.</strong> 둘 다 301이 아닙니다.</p>
-<figure class="fg"><img src="/img/posts/domain-forwarding/three-ways.png" alt="고정 포워딩(frame)은 구글과 네이버 둘 다 ✕, 유동 포워딩(meta refresh)은 구글만 △, 301 리다이렉트는 둘 다 ○로 표시한 비교 그림" loading="lazy" decoding="async"><figcaption>검색만 놓고 보면 셋의 결과가 이렇게 갈립니다</figcaption></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>방식</th><th>주소창에 보이는 것</th><th>검색엔진에 알리는 것</th></tr></thead><tbody><tr><td><strong>고정</strong> (frame)</td><td>내 주소 그대로</td><td>아무것도</td></tr><tr><td><strong>유동</strong> (meta refresh)</td><td>연결한 주소</td><td>옮겼다 (구글만 받아들입니다)</td></tr><tr><td><strong>301</strong> (서버 응답)</td><td>연결한 주소</td><td>옮겼다 (구글·네이버)</td></tr></tbody></table>
+<p>유동과 301은 <strong>주소창에서 똑같아 보입니다.</strong> 다른 것은 검색엔진에 무엇을 알리느냐입니다.</p>
 <h2 id="s3">검색엔진은 둘을 다르게 봅니다</h2>
 <h3 id="s4">유동은 구글에서 영구 이동으로 읽힙니다</h3>
 <p><span class="fnt">구글은 즉시 실행되는 meta refresh를 영구 리디렉션으로 해석합니다.</span><sup class="fnr"><a href="#n3">3</a></sup><span class="fn" id="n3" role="note"><span class="tx"><b class="num">[3]</b>구글은 주소를 옮기는 방법을 올바르게 해석할 가능성이 높은 순서로 늘어놓는데, 301이 맨 위이고 meta refresh는 세 번째입니다. 그 meta refresh도 둘로 나눕니다. “즉시 meta refresh 리디렉션: 페이지가 브라우저에 로드되는 즉시 트리거됩니다. Google 검색은 즉시 meta refresh 리디렉션을 영구 리디렉션으로 해석합니다.” 0초가 아니라 몇 초 뒤에 넘기는 지연 방식은 임시로 봅니다. 업체 화면에서 지연 시간을 고르게 돼 있다면 0초로 두셔야 합니다.</span><span class="src"><span class="lb">출처</span><span class="sl">[2] <a href="https://developers.google.com/search/docs/crawling-indexing/301-redirects?hl=ko" target="_blank" rel="noopener">Google 검색 센터 - 리디렉션 및 Google 검색 · 한국어판(기계 번역)</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span> 그래서 유동 포워딩은 구글에서 그런대로 통합니다.</p>
