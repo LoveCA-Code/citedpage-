@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CitedPage | CitedPage</title><meta name="description" content="검색과 AI 검색에 노출되는 글을 만드는 방법을 기록합니다."><link rel="canonical" href="https://citedpage.com/"><meta name="robots" content="max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="CitedPage"><meta property="og:title" content="CitedPage"><meta property="og:description" content="검색과 AI 검색에 노출되는 글을 만드는 방법을 기록합니다."><meta property="og:url" content="https://citedpage.com/"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://citedpage.com/img/og-default.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta name="twitter:card" content="summary_large_image"><link rel="alternate" type="application/rss+xml" title="CitedPage 블로그" href="/feed.xml"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>/* =========================================================================
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CitedPage | CitedPage</title><meta name="description" content="검색과 AI 검색에 노출되는 글을 만드는 방법을 기록합니다."><link rel="canonical" href="https://citedpage.com/"><meta name="robots" content="max-image-preview:large"><meta property="og:type" content="website"><meta property="og:site_name" content="CitedPage"><meta property="og:title" content="CitedPage"><meta property="og:description" content="검색과 AI 검색에 노출되는 글을 만드는 방법을 기록합니다."><meta property="og:url" content="https://citedpage.com/"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://citedpage.com/img/og-default.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta name="twitter:card" content="summary_large_image"><link rel="alternate" type="application/rss+xml" title="CitedPage 블로그" href="/feed.xml"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><!-- Pretendard: 통짜(static) → dynamic-subset으로 바꿈 (2026-10-06).
+       통짜는 굵기마다 한글 전체가 든 파일을 받습니다. subset 판은 이 쪽에 실제로
+       쓰인 글자가 든 묶음만 받습니다. variable이라 굵기도 파일 하나입니다.
+       글꼴 이름이 Pretendard Variable이라 theme.css 스택 맨 앞에 넣어 두었습니다. --><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>/* =========================================================================
    CitedPage — 테마 파일 (design system)
    이 파일 하나가 모든 페이지의 디자인을 통제합니다.
    색·글자크기·폰트를 바꾸려면 아래 :root 값만 고치세요 → 전 페이지 일괄 반영.
@@ -22,8 +25,8 @@
   --header-bg:rgba(255,255,255,.96);
 
   /* ---- 글자 ----------------------------------------------------------- */
-  --font-sans:'Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
-  --font-mono:'IBM Plex Mono','Pretendard',ui-monospace,Consolas,monospace; /* 한글은 Pretendard로 (Plex Mono에 한글 없음 → 굴림 낙하 방지) */
+  --font-sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
+  --font-mono:'IBM Plex Mono','Pretendard Variable','Pretendard',ui-monospace,Consolas,monospace; /* 한글은 Pretendard로 (Plex Mono에 한글 없음 → 굴림 낙하 방지) */
   --fs-body:16px;        /* 본문 */
   --fs-sm:14px;          /* 작은 본문 */
   --fs-meta:13px;        /* 메뉴·메타 */
@@ -185,8 +188,40 @@ article{padding:8px 0 84px}
 .h2n{font-size:clamp(22px,3vw,28px);font-weight:700;letter-spacing:-.03em;line-height:1.35;margin:64px 0 0;word-break:keep-all;scroll-margin-top:120px;display:flex;gap:14px;align-items:baseline}
 .h2n .n{font-size:var(--fs-body);color:var(--accent);font-weight:500;flex-shrink:0}
 h3{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:44px 0 0;color:var(--ink)}
-.body{font-size:var(--fs-body);color:var(--text-body);margin:20px 0 0;word-break:keep-all}
+.body{font-size:var(--fs-body);color:var(--text-body);margin:20px 0 0;word-break:keep-all;counter-reset:h2장}
 .body strong,.body b{font-weight:700;color:var(--ink)}
+
+/* 원고에서 나온 H2 — 새 장이 시작된다는 표시 (2026-10-06)
+   그 전에는 규칙이 없어 브라우저 기본값으로 그려졌습니다. 본문과 같은 색에
+   본문 줄간격(1.7)을 물려받아, 제목인데 눌려 보이고 눈에 걸리지 않았습니다. */
+.body h2{
+  font-size:clamp(30px,3.8vw,36px);font-weight:700;
+  letter-spacing:-.04em;line-height:1.24;color:var(--ink);
+  word-break:keep-all;scroll-margin-top:120px;
+  margin:68px 0 0;padding-top:22px;border-top:1px solid var(--line);
+  counter-increment:h2장;
+}
+/* 장 번호 — 오른쪽 목차 레일이 쓰는 번호와 같은 것입니다 (2026-10-06) */
+.body h2::before{
+  content:counter(h2장,decimal-leading-zero);
+  display:block;margin:0 0 10px;line-height:1;
+  font-family:var(--font-mono);font-size:var(--fs-label);font-weight:500;
+  color:var(--accent);letter-spacing:.1em;
+}
+/* 소제목은 앞 장이 아니라 자기 본문에 붙어야 합니다.
+   H2 바로 뒤에 오는 것만 가깝게 당깁니다 (H3 기본값은 44px) */
+.body h2 + h3{margin-top:38px}
+.body h2 + p,.body h2 + ul,.body h2 + ol{margin-top:32px}
+
+/* 글 속 코드 조각 — 한글이 섞여도 굴림으로 떨어지지 않게 (2026-10-06)
+   규칙이 없으면 monospace 기본값(윈도: Courier New)이 되고, 한글 글자가 없어
+   굴림으로 또 떨어집니다. var(--font-mono)는 한글을 Pretendard로 받습니다. */
+.body code{
+  font-family:var(--font-mono);font-size:.93em;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:5px;
+  padding:1.5px 5px;word-break:break-all;color:var(--ink);
+}
+.body pre code{background:none;border:0;padding:0;font-size:1em}
 
 pre.spec{
   margin:32px 0 0;padding:18px 20px;background:var(--surface-2);border:1px solid var(--line);
@@ -361,6 +396,14 @@ table.cmp th{background:var(--surface-2);font-weight:600}
 .tldr ol{margin:0;padding-left:20px;font-size:var(--fs-body);color:var(--text-2);line-height:1.75}
 .tldr li{margin:0 0 10px}
 .tldr li strong,.tldr li b{color:var(--text-body)}
+/* 맨 끝 마무리 칸 (2026-10-06). 맨 위 요약과 같은 꼴이면 다 읽고 또 요약을 보는 느낌이
+   들어서, 바탕을 깔고 떼어 놓는다. 들어가기 전에 읽는 것과 나오면서 읽는 것은 다르다 */
+.tldr.wrapup{margin:64px 0 0;background:var(--surface-2);border-left:3px solid var(--ink);
+  padding:22px 24px 10px;border-radius:0 8px 8px 0}
+.tldr.wrapup .label{color:var(--ink)}
+.tldr.wrapup p{margin:0 0 12px;font-size:var(--fs-body);color:var(--text-body);
+  line-height:1.75;word-break:keep-all}
+.tldr.wrapup p:last-child{margin-bottom:12px}
 .chk{background:var(--surface-2);border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 6px 6px 0}
 .chk p{margin:6px 0}
 .box.done p{color:var(--text-2)}
@@ -380,9 +423,10 @@ details.qa[open] summary::after{transform:rotate(-135deg)}
 figure.fg img{width:100%;height:auto;display:block;border:1px solid var(--line)}
 figure.fg figcaption{font-size:var(--fs-micro);color:var(--text-4);margin-top:10px;letter-spacing:.02em}
 /* 주석 — 번호 앞 문장에 밑줄, 칸은 그 문장 바로 뒤 */
-.fnt{border-bottom:2px solid var(--accent-soft);padding-bottom:1px;cursor:pointer;transition:background .12s,border-color .12s}
-.fnt:hover{background:#f2f4ff;border-bottom-color:var(--accent)}
-.fnt.on{background:#eaedfd;border-bottom-color:var(--accent);box-shadow:0 0 0 3px #eaedfd}
+/* 밑줄은 뺀다 - 읽을 때 헷갈린다 (2026-10-06). 누를 수 있다는 표시는 주석 번호가 한다 */
+.fnt{cursor:pointer;transition:background .12s}
+.fnt:hover{background:#f4f6ff}
+.fnt.on{background:#eaedfd;box-shadow:0 0 0 3px #eaedfd}
 /* 주석 번호는 로고(CitedPage[1])와 같은 대괄호 꼴 — 대괄호는 CSS로 붙인다 */
 sup.fnr{font-size:11.5px;margin-left:1px;line-height:0;letter-spacing:-.02em;vertical-align:baseline;position:relative;top:-.42em}
 sup.fnr a{text-decoration:none;color:var(--accent);font-weight:700;padding:0 1px;display:inline-block;line-height:1.35}
@@ -419,7 +463,7 @@ sup.fnr.on a{background:var(--accent);color:#fff;border-radius:2px;padding:0 3px
       </script></head><body class><header class="site-header"><div class="container"><a href="/" class="logo">CitedPage<sup>[1]</sup></a><nav class="nav"><a href="/blog">블로그</a></nav></div></header><style>/* 글 페이지 — 주석 칸과 부품 (원고규격_v1 §3) */
 :root{--ink:#1a1a1a;--mid:#444;--dim:#767676;--line:#e5e5e5;--acc:#1b5e9c;--bg-soft:#f6f8fa}
 *{box-sizing:border-box}
-body{margin:0;font-family:Pretendard,system-ui,"Malgun Gothic",sans-serif;color:var(--ink);line-height:1.75;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Pretendard Variable',Pretendard,system-ui,"Malgun Gothic",sans-serif;color:var(--ink);line-height:1.75;-webkit-text-size-adjust:100%}
 header.site,footer.site{max-width:1100px;margin:0 auto;padding:18px 20px;display:flex;gap:16px;align-items:center;justify-content:space-between}
 header.site .logo{font-weight:700;text-decoration:none;color:var(--ink)}
 header.site a,footer.site p{color:var(--mid);text-decoration:none;font-size:15px}
@@ -472,7 +516,7 @@ details.qa[open] summary::after{transform:rotate(-135deg)}
 .qa-a{padding:0 0 14px}
 .qa-a p{margin:0 0 12px}
 /* 주석 — 번호 앞 문장에 밑줄, 칸은 그 문장 바로 뒤 */
-.fnt{border-bottom:1.5px solid #b9d3ea;padding-bottom:1px}
+/* 주석 문장 밑줄은 뺀다 - 읽을 때 헷갈린다 (2026-10-06) */
 sup.fnr{font-size:12px;margin-left:1px}
 sup.fnr a{text-decoration:none;color:var(--acc);font-weight:700;padding:0 2px}
 sup.fnr.on a{background:var(--acc);color:#fff;border-radius:3px}
@@ -498,7 +542,18 @@ sup.fnr.on a{background:var(--acc);color:#fff;border-radius:3px}
 .list .cl{margin:22px 0}
 .list .cl h3{font-size:16.5px;margin:0 0 8px;color:var(--mid)}
 .list ul{list-style:none;margin:0;padding:0}
-.list li{padding:10px 0;border-top:1px solid var(--line)}
+/* 목록 줄 - 왼쪽에 대표사진, 오른쪽에 글 (2026-10-06)
+   그 전에는 대표사진이 og:image로만 쓰이고 사이트 안에서는 아무 데도 안 보였다 */
+.list li{padding:14px 0;border-top:1px solid var(--line);display:flex;gap:16px;align-items:flex-start}
+.list li .thumb{flex:none;width:150px;aspect-ratio:16/9;border-radius:8px;overflow:hidden;
+  background:var(--bg-soft);border:1px solid var(--line);display:block}
+.list li .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.list li .txt{flex:1;min-width:0}
+@media (max-width:560px){
+  .list li{gap:12px}
+  .list li .thumb{width:104px}
+  .list li p.meta{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+}
 .list li a{font-size:17px;text-decoration:none;font-weight:600}
 .list li a:hover{text-decoration:underline}
 .list li .tier{font-size:11.5px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-left:8px;vertical-align:2px}

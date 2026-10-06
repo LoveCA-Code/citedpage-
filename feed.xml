@@ -2,6 +2,7 @@
 <rss version="2.0"><channel>
   <title>CitedPage 블로그</title><link>https://citedpage.com/blog</link>
   <description>검색과 AI 검색에 노출되는 글을 만드는 방법</description><language>ko</language>
+  <item><title>404 오류 해결 방법, 구글은 둘만 고치라고 합니다</title><link>https://citedpage.com/blog/404-error</link><guid>https://citedpage.com/blog/404-error</guid><description>구글은 404를 대부분 고치지 말라고 합니다. 고쳐야 할 것은 둘뿐이고, 진짜 문제는 따로 있습니다. 검색 결과 687곳을 직접 받아 세어 봤습니다.</description><pubDate>Wed, 07 Oct 2026 00:00:00 GMT</pubDate></item>
   <item><title>hreflang 태그란? 작동 조건과 흔한 실수</title><link>https://citedpage.com/blog/hreflang-tag</link><guid>https://citedpage.com/blog/hreflang-tag</guid><description>hreflang은 같은 글의 다른 언어판을 알리는 표시입니다. 구글은 지금도 쓰지만 네이버는 보지 않고, 검색 결과 553곳을 직접 받아 보니 실수가 한 가지로 몰려 있었습니다.</description><pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate></item>
   <item><title>도메인 포워딩이란? 301 리다이렉트와 무엇이 다른가</title><link>https://citedpage.com/blog/domain-forwarding</link><guid>https://citedpage.com/blog/domain-forwarding</guid><description>호스팅 업체의 포워딩은 301 리다이렉트가 아닙니다. 가비아 기준으로 고정은 frame, 유동은 meta이고 검색엔진은 둘을 다르게 봅니다.</description><pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate></item>
   <item><title>301 리다이렉트 뜻과 302와의 차이, 설정법</title><link>https://citedpage.com/blog/301-redirect</link><guid>https://citedpage.com/blog/301-redirect</guid><description>301은 오류가 아닙니다. 그런데 걸어 둔 뒤에도 순위가 몇 달 동안 안 돌아오는 이유를 공식 문서와 집계로 정리했습니다.</description><pubDate>Sun, 04 Oct 2026 00:00:00 GMT</pubDate></item>
