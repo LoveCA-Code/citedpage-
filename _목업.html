@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>글 제목 안 목업</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --ink:#111;--text-body:#333;--text-2:#565656;--text-3:#999;--text-4:#aaa;
+  --line:#e6e6e6;--surface:#fff;--surface-2:#f7f8f9;--accent:#2340ff;--accent-soft:#d3d9f5;
+  --font-sans:'Pretendard Variable','Pretendard',-apple-system,sans-serif;
+  --font-mono:'IBM Plex Mono','Pretendard Variable',ui-monospace,monospace;
+  --fs-body:16px;--fs-sm:14px;--fs-meta:13px;--fs-label:12px;--narrow:700px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font-sans);color:var(--ink);background:#fafafa;line-height:1.7}
+.sheet{background:#fff;max-width:960px;margin:0 auto 48px;border:1px solid var(--line)}
+.tag{font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;color:#fff;background:#111;
+     padding:7px 14px;display:flex;justify-content:space-between;align-items:center}
+.tag em{font-style:normal;color:#bbb;font-weight:400;letter-spacing:0;font-family:var(--font-sans)}
+.narrow{max-width:var(--narrow);margin:0 auto;padding:0 40px}
+.posthead{border-bottom:1px solid var(--line)}
+.posthead .narrow{padding-top:64px;padding-bottom:40px}
+.crumb{font-size:var(--fs-label);color:var(--text-3);letter-spacing:.03em;margin:0}
+.cat{font-size:var(--fs-label);font-weight:600;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin:28px 0 0}
+.byline{font-size:var(--fs-meta);color:var(--text-3);margin:22px 0 0}
+.byline b{color:var(--text-2);font-weight:400}
+h1{margin:0;font-weight:700}
+.after{padding:26px 0 34px;color:var(--text-body);font-size:var(--fs-body)}
+.after p{margin:0;word-break:keep-all}
+
+/* ── A. 지금 ───────────────────────────────── */
+.vA h1{font-size:clamp(28px,4.2vw,42px);line-height:1.26;letter-spacing:-.035em;margin:12px 0 0}
+
+/* ── B. 크게 ───────────────────────────────── */
+.vB .posthead .narrow{padding-top:76px;padding-bottom:44px}
+.vB h1{font-size:clamp(34px,5.6vw,56px);line-height:1.16;letter-spacing:-.045em;margin:16px 0 0;word-break:keep-all}
+
+/* ── C. 먹색 띠 ────────────────────────────── */
+.vC .posthead{background:#111;border-bottom:0}
+.vC .posthead .narrow{padding-top:70px;padding-bottom:52px}
+.vC .crumb,.vC .crumb a{color:#8b8b8b}
+.vC .cat{color:#8ea2ff}
+.vC h1{font-size:clamp(32px,5.2vw,52px);line-height:1.18;letter-spacing:-.045em;margin:16px 0 0;color:#fff;word-break:keep-all}
+.vC .byline{color:#8b8b8b}
+.vC .byline b{color:#c9c9c9}
+
+/* ── D. 왼쪽 굵은 기둥 ─────────────────────── */
+.vD .posthead .narrow{padding-top:72px;padding-bottom:44px}
+.vD .head-wrap{border-left:6px solid var(--accent);padding-left:24px}
+.vD .cat{margin:0}
+.vD h1{font-size:clamp(32px,5vw,50px);line-height:1.18;letter-spacing:-.045em;margin:12px 0 0;word-break:keep-all}
+
+/* ── E. 큰 글씨 + 한 줄 요약 ───────────────── */
+.vE .posthead .narrow{padding-top:76px;padding-bottom:40px}
+.vE h1{font-size:clamp(34px,5.6vw,56px);line-height:1.16;letter-spacing:-.045em;margin:16px 0 0;word-break:keep-all}
+.vE .lede{margin:24px 0 0;font-size:18px;color:var(--text-2);line-height:1.6;word-break:keep-all;max-width:600px}
+</style></head>
+<body>
+
+<div class="sheet vA">
+  <div class="tag"><span>A</span><em>지금 쓰는 것 — 42px · 위 72px</em></div>
+  <div class="posthead"><div class="narrow">
+    <p class="crumb">홈 / 블로그</p>
+    <p class="cat">URL·사이트 구조</p>
+    <h1>홈페이지 구조란? 뜻과 3클릭 규칙, 구글이 보는 기준</h1>
+    <p class="byline"><b>CitedPage</b> · 2026년 10월 10일 · 초안</p>
+  </div></div>
+  <div class="narrow after"><p>"홈페이지 구조"를 검색하면 머리말과 본문을 어디에 둘지 같은 화면 이야기가 주로 나옵니다. 이 글이 다루는 것은 그쪽이 아닙니다.</p></div>
+</div>
+
+<div class="sheet vB">
+  <div class="tag"><span>B</span><em>그냥 크게 — 56px · 자간 더 좁게</em></div>
+  <div class="posthead"><div class="narrow">
+    <p class="crumb">홈 / 블로그</p>
+    <p class="cat">URL·사이트 구조</p>
+    <h1>홈페이지 구조란? 뜻과 3클릭 규칙, 구글이 보는 기준</h1>
+    <p class="byline"><b>CitedPage</b> · 2026년 10월 10일 · 초안</p>
+  </div></div>
+  <div class="narrow after"><p>"홈페이지 구조"를 검색하면 머리말과 본문을 어디에 둘지 같은 화면 이야기가 주로 나옵니다. 이 글이 다루는 것은 그쪽이 아닙니다.</p></div>
+</div>
+
+<div class="sheet vC">
+  <div class="tag"><span>C</span><em>먹색 띠 — 제목 칸을 통째로 검게</em></div>
+  <div class="posthead"><div class="narrow">
+    <p class="crumb">홈 / 블로그</p>
+    <p class="cat">URL·사이트 구조</p>
+    <h1>홈페이지 구조란? 뜻과 3클릭 규칙, 구글이 보는 기준</h1>
+    <p class="byline"><b>CitedPage</b> · 2026년 10월 10일 · 초안</p>
+  </div></div>
+  <div class="narrow after"><p>"홈페이지 구조"를 검색하면 머리말과 본문을 어디에 둘지 같은 화면 이야기가 주로 나옵니다. 이 글이 다루는 것은 그쪽이 아닙니다.</p></div>
+</div>
+
+<div class="sheet vD">
+  <div class="tag"><span>D</span><em>왼쪽 굵은 기둥 — 포인트 블루 6px</em></div>
+  <div class="posthead"><div class="narrow">
+    <p class="crumb">홈 / 블로그</p>
+    <div class="head-wrap" style="margin-top:28px">
+      <p class="cat">URL·사이트 구조</p>
+      <h1>홈페이지 구조란? 뜻과 3클릭 규칙, 구글이 보는 기준</h1>
+    </div>
+    <p class="byline"><b>CitedPage</b> · 2026년 10월 10일 · 초안</p>
+  </div></div>
+  <div class="narrow after"><p>"홈페이지 구조"를 검색하면 머리말과 본문을 어디에 둘지 같은 화면 이야기가 주로 나옵니다. 이 글이 다루는 것은 그쪽이 아닙니다.</p></div>
+</div>
+
+<div class="sheet vE">
+  <div class="tag"><span>E</span><em>크게 + 한 줄 요약(목록설명을 그대로 씀)</em></div>
+  <div class="posthead"><div class="narrow">
+    <p class="crumb">홈 / 블로그</p>
+    <p class="cat">URL·사이트 구조</p>
+    <h1>홈페이지 구조란? 뜻과 3클릭 규칙, 구글이 보는 기준</h1>
+    <p class="lede">업계에 흔한 "홈에서 3클릭 안에"는 구글이 한 말이 아닙니다. 구글 문서에 있던 것은 "스무 클릭" 금지였고 2024년에 지워졌습니다.</p>
+    <p class="byline"><b>CitedPage</b> · 2026년 10월 10일 · 초안</p>
+  </div></div>
+  <div class="narrow after"><p>"홈페이지 구조"를 검색하면 머리말과 본문을 어디에 둘지 같은 화면 이야기가 주로 나옵니다. 이 글이 다루는 것은 그쪽이 아닙니다.</p></div>
+</div>
+
+</body></html>
