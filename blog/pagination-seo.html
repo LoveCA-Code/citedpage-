@@ -195,8 +195,8 @@ h3{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:44px 0 0;color:va
    그 전에는 규칙이 없어 브라우저 기본값으로 그려졌습니다. 본문과 같은 색에
    본문 줄간격(1.7)을 물려받아, 제목인데 눌려 보이고 눈에 걸리지 않았습니다. */
 .body h2{
-  font-size:clamp(24px,3.1vw,29px);font-weight:700;
-  letter-spacing:-.035em;line-height:1.3;color:var(--ink);
+  font-size:clamp(30px,3.8vw,36px);font-weight:700;
+  letter-spacing:-.04em;line-height:1.24;color:var(--ink);
   word-break:keep-all;scroll-margin-top:120px;
   margin:68px 0 0;padding-top:22px;border-top:1px solid var(--line);
   counter-increment:h2장;
@@ -456,70 +456,7 @@ sup.fnr.on a{background:var(--accent);color:#fff;border-radius:2px;padding:0 3px
 .preview-bar .st.초안{background:#4a4a4a;color:#fff}
 .preview-bar .st.예약{background:#2340ff;color:#fff}
 .preview-bar .st.공개됨{background:#1a7f37;color:#fff}
-@media (max-width:480px){.preview-bar{font-size:12px;padding:8px 12px}}</style><div class="preview-bar"><b>미리보기</b> · 이 쪽은 검색에 올라가지 않습니다 ·<span class="st 예약">예약</span> · 발행일 2026-10-09</div><style>
-/* ── 소제목 안 고르기 (미리보기 전용) ───────────────────────── */
-.h2bar{position:sticky;top:36px;z-index:49;background:#fff;border-bottom:1px solid var(--line);
-  padding:8px 16px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;align-items:center}
-.h2bar .lb{font-size:12px;color:var(--text-3);margin-right:4px}
-.h2bar button{font:inherit;font-size:12px;padding:5px 11px;border:1px solid var(--line);
-  background:#fff;color:var(--text-2);border-radius:999px;cursor:pointer;letter-spacing:-.01em}
-.h2bar button:hover{border-color:#bbb}
-.h2bar button.on{background:#111;border-color:#111;color:#fff;font-weight:600}
-
-/* ── B. 크게 ─────────────────────────────────────────────── */
-html.h2B .body h2{font-size:clamp(30px,3.8vw,36px);letter-spacing:-.04em;line-height:1.24}
-
-/* ── C. 먹색 블록 — 제목을 검은 칸에 넣는다 ───────────────── */
-html.h2C .body h2{
-  border-top:0;padding:14px 20px 15px;margin:72px 0 0;
-  background:var(--ink);color:#fff;font-size:clamp(24px,3.1vw,28px);
-  display:table;max-width:100%;
-}
-html.h2C .body h2::before{color:#8ea2ff;margin-bottom:6px}
-
-/* ── D. 큰 번호 — 번호를 제목 왼쪽에 크게 세운다 ──────────── */
-html.h2D .body h2{
-  border-top:1px solid var(--line);padding-top:24px;
-  display:flex;align-items:baseline;gap:18px;font-size:clamp(26px,3.3vw,31px);
-}
-html.h2D .body h2::before{
-  margin:0;font-size:34px;font-weight:700;color:var(--accent-soft);
-  letter-spacing:-.03em;flex:none;line-height:1;
-}
-
-/* ── E. 굵은 파란 윗선 ───────────────────────────────────── */
-html.h2E .body h2{
-  border-top:4px solid var(--accent);padding-top:22px;
-  font-size:clamp(27px,3.4vw,32px);
-}
-html.h2E .body h2::before{color:var(--accent)}
-
-/* ── F. 번호 칩 — 번호를 파란 네모에 넣는다 ───────────────── */
-html.h2F .body h2{
-  border-top:1px solid var(--line);padding-top:24px;
-  font-size:clamp(26px,3.3vw,31px);
-}
-html.h2F .body h2::before{
-  display:table;background:var(--accent);color:#fff;
-  padding:4px 9px 5px;border-radius:5px;margin-bottom:12px;letter-spacing:.08em;
-}
-</style><div class="h2bar"><span class="lb">소제목 안</span><button type="button" data-v="A">A 지금</button><button type="button" data-v="B">B 크게</button><button type="button" data-v="C">C 먹색 블록</button><button type="button" data-v="D">D 큰 번호</button><button type="button" data-v="E">E 굵은 파란 윗선</button><button type="button" data-v="F">F 번호 칩</button></div><script>(function(){
-  var 안 = ["A","B","C","D","E","F"];
-  var 둔것 = localStorage.getItem("h2안") || "A";
-  function 걸기(v){
-    안.forEach(function(x){ document.documentElement.classList.remove("h2"+x) });
-    if (v !== "A") document.documentElement.classList.add("h2"+v);
-    document.querySelectorAll(".h2bar button").forEach(function(b){
-      b.classList.toggle("on", b.dataset.v === v);
-    });
-    try { localStorage.setItem("h2안", v) } catch(e) {}
-  }
-  걸기(둔것);
-  document.addEventListener("click", function(e){
-    var b = e.target.closest(".h2bar button");
-    if (b) 걸기(b.dataset.v);
-  });
-})();</script><div class="article-shell"><div class="col-main"><div class="posthead"><div class="narrow"><p class="crumb"><a href="/">홈</a> / <a href="/blog">블로그</a></p><p class="cat">URL·사이트 구조</p><h1>페이지네이션이란? 뜻과 rel=next 폐기, offset 문제</h1><p class="byline"><b>CitedPage</b> · <time datetime="2026-10-09T00:00:00.000Z">2026-10-09</time></p><nav class="toc toc-mobile" aria-label="목차"><p class="label">목차</p><ol><li><a href="#s1"><span class="n">01</span>페이지네이션이란?</a></li><li><a href="#s4"><span class="n">02</span>버려진 rel=next</a></li><li><a href="#s9"><span class="n">03</span>진짜 쟁점은 캐노니컬</a></li><li><a href="#s13"><span class="n">04</span>변형 주소 막는 법</a></li><li><a href="#s17"><span class="n">05</span>offset과 cursor</a></li><li><a href="#s21"><span class="n">06</span>자주 묻는 질문</a></li><li><a href="#s22"><span class="n">07</span>더 볼 것</a></li></ol></nav></div></div><div class="narrow"><div class="body"><h2 id="s1">페이지네이션이란?</h2>
+@media (max-width:480px){.preview-bar{font-size:12px;padding:8px 12px}}</style><div class="preview-bar"><b>미리보기</b> · 이 쪽은 검색에 올라가지 않습니다 ·<span class="st 예약">예약</span> · 발행일 2026-10-09</div><div class="article-shell"><div class="col-main"><div class="posthead"><div class="narrow"><p class="crumb"><a href="/">홈</a> / <a href="/blog">블로그</a></p><p class="cat">URL·사이트 구조</p><h1>페이지네이션이란? 뜻과 rel=next 폐기, offset 문제</h1><p class="byline"><b>CitedPage</b> · <time datetime="2026-10-09T00:00:00.000Z">2026-10-09</time></p><nav class="toc toc-mobile" aria-label="목차"><p class="label">목차</p><ol><li><a href="#s1"><span class="n">01</span>페이지네이션이란?</a></li><li><a href="#s4"><span class="n">02</span>버려진 rel=next</a></li><li><a href="#s9"><span class="n">03</span>진짜 쟁점은 캐노니컬</a></li><li><a href="#s13"><span class="n">04</span>변형 주소 막는 법</a></li><li><a href="#s17"><span class="n">05</span>offset과 cursor</a></li><li><a href="#s21"><span class="n">06</span>자주 묻는 질문</a></li><li><a href="#s22"><span class="n">07</span>더 볼 것</a></li></ol></nav></div></div><div class="narrow"><div class="body"><h2 id="s1">페이지네이션이란?</h2>
 <h3 id="s2">페이지네이션은 목록을 여러 쪽으로 나눕니다</h3>
 <p>상품 목록이나 글 목록처럼 항목이 많을 때, 한 쪽에 다 싣지 않고 <strong>1, 2, 3…으로 나눠 보여 주는 방식</strong>입니다. 우리말로는 쪽 나누기나 페이징이라고도 합니다.</p>
 <p>구글은 긴 목록을 다루는 방법을 세 가지로 나눠 적습니다. <span class="fnt">번호를 눌러 넘기는 페이지네이션, 버튼을 눌러 더 불러오는 더 보기, 끝까지 내리면 계속 이어지는 무한 스크롤입니다.</span><sup class="fnr"><a href="#n1">1</a></sup><span class="fn" id="n1" role="note"><span class="tx"><b class="num">[1]</b>구글 문서는 이렇게 적습니다. “To display a subset of a larger list, you can choose between different UX patterns: Pagination: Where a user can use links such as “next”, “previous”, and page numbers to navigate between pages that display one page of results at a time. Load more: Buttons that a user can click…” 같은 쪽에서 구글은 셋의 장단점을 표로 비교하는데, 무한 스크롤의 단점으로는 결과가 얼마나 되는지 알 수 없어 생기는 “스크롤 피로”와 아주 많은 결과를 감당하지 못한다는 점을 듭니다.</span><span class="src"><span class="lb">출처</span><span class="sl">[1] <a href="https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading?hl=en" target="_blank" rel="noopener">Google 검색 센터 - Pagination and incremental page loading best practices (영어 원문) · 한국어판(기계 번역)</a></span></span><button class="x" type="button" aria-label="닫기"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></span> 셋 다 같은 문제를 안고 있는데, 첫 화면에 없는 항목을 검색엔진이 어떻게 찾느냐입니다.</p>

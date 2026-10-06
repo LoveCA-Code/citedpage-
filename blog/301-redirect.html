@@ -195,8 +195,8 @@ h3{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:44px 0 0;color:va
    그 전에는 규칙이 없어 브라우저 기본값으로 그려졌습니다. 본문과 같은 색에
    본문 줄간격(1.7)을 물려받아, 제목인데 눌려 보이고 눈에 걸리지 않았습니다. */
 .body h2{
-  font-size:clamp(24px,3.1vw,29px);font-weight:700;
-  letter-spacing:-.035em;line-height:1.3;color:var(--ink);
+  font-size:clamp(30px,3.8vw,36px);font-weight:700;
+  letter-spacing:-.04em;line-height:1.24;color:var(--ink);
   word-break:keep-all;scroll-margin-top:120px;
   margin:68px 0 0;padding-top:22px;border-top:1px solid var(--line);
   counter-increment:h2장;
@@ -456,70 +456,7 @@ sup.fnr.on a{background:var(--accent);color:#fff;border-radius:2px;padding:0 3px
 .preview-bar .st.초안{background:#4a4a4a;color:#fff}
 .preview-bar .st.예약{background:#2340ff;color:#fff}
 .preview-bar .st.공개됨{background:#1a7f37;color:#fff}
-@media (max-width:480px){.preview-bar{font-size:12px;padding:8px 12px}}</style><div class="preview-bar"><b>미리보기</b> · 이 쪽은 검색에 올라가지 않습니다 ·<span class="st 공개됨">공개됨</span> · 발행일 2026-10-04</div><style>
-/* ── 소제목 안 고르기 (미리보기 전용) ───────────────────────── */
-.h2bar{position:sticky;top:36px;z-index:49;background:#fff;border-bottom:1px solid var(--line);
-  padding:8px 16px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;align-items:center}
-.h2bar .lb{font-size:12px;color:var(--text-3);margin-right:4px}
-.h2bar button{font:inherit;font-size:12px;padding:5px 11px;border:1px solid var(--line);
-  background:#fff;color:var(--text-2);border-radius:999px;cursor:pointer;letter-spacing:-.01em}
-.h2bar button:hover{border-color:#bbb}
-.h2bar button.on{background:#111;border-color:#111;color:#fff;font-weight:600}
-
-/* ── B. 크게 ─────────────────────────────────────────────── */
-html.h2B .body h2{font-size:clamp(30px,3.8vw,36px);letter-spacing:-.04em;line-height:1.24}
-
-/* ── C. 먹색 블록 — 제목을 검은 칸에 넣는다 ───────────────── */
-html.h2C .body h2{
-  border-top:0;padding:14px 20px 15px;margin:72px 0 0;
-  background:var(--ink);color:#fff;font-size:clamp(24px,3.1vw,28px);
-  display:table;max-width:100%;
-}
-html.h2C .body h2::before{color:#8ea2ff;margin-bottom:6px}
-
-/* ── D. 큰 번호 — 번호를 제목 왼쪽에 크게 세운다 ──────────── */
-html.h2D .body h2{
-  border-top:1px solid var(--line);padding-top:24px;
-  display:flex;align-items:baseline;gap:18px;font-size:clamp(26px,3.3vw,31px);
-}
-html.h2D .body h2::before{
-  margin:0;font-size:34px;font-weight:700;color:var(--accent-soft);
-  letter-spacing:-.03em;flex:none;line-height:1;
-}
-
-/* ── E. 굵은 파란 윗선 ───────────────────────────────────── */
-html.h2E .body h2{
-  border-top:4px solid var(--accent);padding-top:22px;
-  font-size:clamp(27px,3.4vw,32px);
-}
-html.h2E .body h2::before{color:var(--accent)}
-
-/* ── F. 번호 칩 — 번호를 파란 네모에 넣는다 ───────────────── */
-html.h2F .body h2{
-  border-top:1px solid var(--line);padding-top:24px;
-  font-size:clamp(26px,3.3vw,31px);
-}
-html.h2F .body h2::before{
-  display:table;background:var(--accent);color:#fff;
-  padding:4px 9px 5px;border-radius:5px;margin-bottom:12px;letter-spacing:.08em;
-}
-</style><div class="h2bar"><span class="lb">소제목 안</span><button type="button" data-v="A">A 지금</button><button type="button" data-v="B">B 크게</button><button type="button" data-v="C">C 먹색 블록</button><button type="button" data-v="D">D 큰 번호</button><button type="button" data-v="E">E 굵은 파란 윗선</button><button type="button" data-v="F">F 번호 칩</button></div><script>(function(){
-  var 안 = ["A","B","C","D","E","F"];
-  var 둔것 = localStorage.getItem("h2안") || "A";
-  function 걸기(v){
-    안.forEach(function(x){ document.documentElement.classList.remove("h2"+x) });
-    if (v !== "A") document.documentElement.classList.add("h2"+v);
-    document.querySelectorAll(".h2bar button").forEach(function(b){
-      b.classList.toggle("on", b.dataset.v === v);
-    });
-    try { localStorage.setItem("h2안", v) } catch(e) {}
-  }
-  걸기(둔것);
-  document.addEventListener("click", function(e){
-    var b = e.target.closest(".h2bar button");
-    if (b) 걸기(b.dataset.v);
-  });
-})();</script><div class="article-shell"><div class="col-main"><div class="posthead"><div class="narrow"><p class="crumb"><a href="/">홈</a> / <a href="/blog">블로그</a></p><p class="cat">URL·사이트 구조</p><h1>301 리다이렉트 뜻과 302와의 차이, 설정법</h1><p class="byline"><b>CitedPage</b> · <time datetime="2026-10-04T00:00:00.000Z">2026-10-04</time></p><nav class="toc toc-mobile" aria-label="목차"><p class="label">목차</p><ol><li><a href="#s1"><span class="n">01</span>301 리다이렉트란?</a></li><li><a href="#s4"><span class="n">02</span>301과 302</a></li><li><a href="#s7"><span class="n">03</span>링크 가치와 회복</a></li><li><a href="#s10"><span class="n">04</span>301을 거는 방법</a></li><li><a href="#s15"><span class="n">05</span>자주 묻는 질문</a></li><li><a href="#s16"><span class="n">06</span>더 볼 것</a></li></ol></nav></div></div><div class="narrow"><div class="body"><div class="tldr"><p class="label">먼저 결론부터</p>
+@media (max-width:480px){.preview-bar{font-size:12px;padding:8px 12px}}</style><div class="preview-bar"><b>미리보기</b> · 이 쪽은 검색에 올라가지 않습니다 ·<span class="st 공개됨">공개됨</span> · 발행일 2026-10-04</div><div class="article-shell"><div class="col-main"><div class="posthead"><div class="narrow"><p class="crumb"><a href="/">홈</a> / <a href="/blog">블로그</a></p><p class="cat">URL·사이트 구조</p><h1>301 리다이렉트 뜻과 302와의 차이, 설정법</h1><p class="byline"><b>CitedPage</b> · <time datetime="2026-10-04T00:00:00.000Z">2026-10-04</time></p><nav class="toc toc-mobile" aria-label="목차"><p class="label">목차</p><ol><li><a href="#s1"><span class="n">01</span>301 리다이렉트란?</a></li><li><a href="#s4"><span class="n">02</span>301과 302</a></li><li><a href="#s7"><span class="n">03</span>링크 가치와 회복</a></li><li><a href="#s10"><span class="n">04</span>301을 거는 방법</a></li><li><a href="#s15"><span class="n">05</span>자주 묻는 질문</a></li><li><a href="#s16"><span class="n">06</span>더 볼 것</a></li></ol></nav></div></div><div class="narrow"><div class="body"><div class="tldr"><p class="label">먼저 결론부터</p>
 <ol>
 <li>301 리다이렉트는 주소를 영구히 옮겼다고 알리는 정상 응답입니다. <strong>오류가 아니니 고치려 하지 않으셔도 됩니다.</strong></li>
 <li>영구 이동이면 301, 되돌릴 수도 있으면 302를 쓰시면 됩니다. <strong>구글은 301만 대표 주소를 바꾸는 강한 신호로 받습니다.</strong></li>

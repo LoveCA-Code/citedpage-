@@ -195,8 +195,8 @@ h3{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:44px 0 0;color:va
    그 전에는 규칙이 없어 브라우저 기본값으로 그려졌습니다. 본문과 같은 색에
    본문 줄간격(1.7)을 물려받아, 제목인데 눌려 보이고 눈에 걸리지 않았습니다. */
 .body h2{
-  font-size:clamp(24px,3.1vw,29px);font-weight:700;
-  letter-spacing:-.035em;line-height:1.3;color:var(--ink);
+  font-size:clamp(30px,3.8vw,36px);font-weight:700;
+  letter-spacing:-.04em;line-height:1.24;color:var(--ink);
   word-break:keep-all;scroll-margin-top:120px;
   margin:68px 0 0;padding-top:22px;border-top:1px solid var(--line);
   counter-increment:h2장;
@@ -529,7 +529,18 @@ sup.fnr.on a{background:var(--acc);color:#fff;border-radius:3px}
 .list .cl{margin:22px 0}
 .list .cl h3{font-size:16.5px;margin:0 0 8px;color:var(--mid)}
 .list ul{list-style:none;margin:0;padding:0}
-.list li{padding:10px 0;border-top:1px solid var(--line)}
+/* 목록 줄 - 왼쪽에 대표사진, 오른쪽에 글 (2026-10-06)
+   그 전에는 대표사진이 og:image로만 쓰이고 사이트 안에서는 아무 데도 안 보였다 */
+.list li{padding:14px 0;border-top:1px solid var(--line);display:flex;gap:16px;align-items:flex-start}
+.list li .thumb{flex:none;width:150px;aspect-ratio:16/9;border-radius:8px;overflow:hidden;
+  background:var(--bg-soft);border:1px solid var(--line);display:block}
+.list li .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.list li .txt{flex:1;min-width:0}
+@media (max-width:560px){
+  .list li{gap:12px}
+  .list li .thumb{width:104px}
+  .list li p.meta{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+}
 .list li a{font-size:17px;text-decoration:none;font-weight:600}
 .list li a:hover{text-decoration:underline}
 .list li .tier{font-size:11.5px;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:1px 7px;margin-left:8px;vertical-align:2px}
