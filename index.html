@@ -380,9 +380,10 @@ details.qa[open] summary::after{transform:rotate(-135deg)}
 figure.fg img{width:100%;height:auto;display:block;border:1px solid var(--line)}
 figure.fg figcaption{font-size:var(--fs-micro);color:var(--text-4);margin-top:10px;letter-spacing:.02em}
 /* 주석 — 번호 앞 문장에 밑줄, 칸은 그 문장 바로 뒤 */
-.fnt{border-bottom:2px solid var(--accent-soft);padding-bottom:1px;cursor:pointer;transition:background .12s,border-color .12s}
-.fnt:hover{background:#f2f4ff;border-bottom-color:var(--accent)}
-.fnt.on{background:#eaedfd;border-bottom-color:var(--accent);box-shadow:0 0 0 3px #eaedfd}
+/* 밑줄은 뺀다 - 읽을 때 헷갈린다 (2026-10-06). 누를 수 있다는 표시는 주석 번호가 한다 */
+.fnt{cursor:pointer;transition:background .12s}
+.fnt:hover{background:#f4f6ff}
+.fnt.on{background:#eaedfd;box-shadow:0 0 0 3px #eaedfd}
 /* 주석 번호는 로고(CitedPage[1])와 같은 대괄호 꼴 — 대괄호는 CSS로 붙인다 */
 sup.fnr{font-size:11.5px;margin-left:1px;line-height:0;letter-spacing:-.02em;vertical-align:baseline;position:relative;top:-.42em}
 sup.fnr a{text-decoration:none;color:var(--accent);font-weight:700;padding:0 1px;display:inline-block;line-height:1.35}
@@ -467,7 +468,7 @@ details.qa[open] summary::after{transform:rotate(-135deg)}
 .qa-a{padding:0 0 14px}
 .qa-a p{margin:0 0 12px}
 /* 주석 — 번호 앞 문장에 밑줄, 칸은 그 문장 바로 뒤 */
-.fnt{border-bottom:1.5px solid #b9d3ea;padding-bottom:1px}
+/* 주석 문장 밑줄은 뺀다 - 읽을 때 헷갈린다 (2026-10-06) */
 sup.fnr{font-size:12px;margin-left:1px}
 sup.fnr a{text-decoration:none;color:var(--acc);font-weight:700;padding:0 2px}
 sup.fnr.on a{background:var(--acc);color:#fff;border-radius:3px}
