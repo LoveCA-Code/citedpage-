@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>페이지네이션이란? 뜻과 rel=next 폐기, offset 문제 | CitedPage</title><meta name="description" content="구글은 2019년에 rel=next와 rel=prev를 버렸습니다. 2페이지가 검색에서 사라지는 진짜 원인은 캐노니컬입니다."><link rel="canonical" href="https://citedpage.com/blog/pagination-seo"><meta name="robots" content="noindex, nofollow"><meta property="og:type" content="article"><meta property="og:site_name" content="CitedPage"><meta property="og:title" content="페이지네이션이란? 뜻과 rel=next 폐기, offset 문제"><meta property="og:description" content="구글은 2019년에 rel=next와 rel=prev를 버렸습니다. 2페이지가 검색에서 사라지는 진짜 원인은 캐노니컬입니다."><meta property="og:url" content="https://citedpage.com/blog/pagination-seo"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://citedpage.com/img/posts/pagination-seo/cover.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta property="og:image:alt" content="페이지네이션이란? 뜻과 rel=next 폐기, offset 문제"><meta name="twitter:card" content="summary_large_image"><link rel="alternate" type="application/rss+xml" title="CitedPage 블로그" href="/feed.xml"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>/* =========================================================================
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>페이지네이션이란? 뜻과 rel=next 폐기, offset 문제 | CitedPage</title><meta name="description" content="구글은 2019년에 rel=next와 rel=prev를 버렸습니다. 2페이지가 검색에서 사라지는 진짜 원인은 캐노니컬입니다."><link rel="canonical" href="https://citedpage.com/blog/pagination-seo"><meta name="robots" content="noindex, nofollow"><meta property="og:type" content="article"><meta property="og:site_name" content="CitedPage"><meta property="og:title" content="페이지네이션이란? 뜻과 rel=next 폐기, offset 문제"><meta property="og:description" content="구글은 2019년에 rel=next와 rel=prev를 버렸습니다. 2페이지가 검색에서 사라지는 진짜 원인은 캐노니컬입니다."><meta property="og:url" content="https://citedpage.com/blog/pagination-seo"><meta property="og:locale" content="ko_KR"><meta property="og:image" content="https://citedpage.com/img/posts/pagination-seo/cover.png"><meta property="og:image:width" content="1280"><meta property="og:image:height" content="720"><meta property="og:image:alt" content="페이지네이션이란? 뜻과 rel=next 폐기, offset 문제"><meta name="twitter:card" content="summary_large_image"><link rel="alternate" type="application/rss+xml" title="CitedPage 블로그" href="/feed.xml"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><!-- Pretendard: 통짜(static) → dynamic-subset으로 바꿈 (2026-10-06).
+       통짜는 굵기마다 한글 전체가 든 파일을 받습니다. subset 판은 이 쪽에 실제로
+       쓰인 글자가 든 묶음만 받습니다. variable이라 굵기도 파일 하나입니다.
+       글꼴 이름이 Pretendard Variable이라 theme.css 스택 맨 앞에 넣어 두었습니다. --><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"><style>/* =========================================================================
    CitedPage — 테마 파일 (design system)
    이 파일 하나가 모든 페이지의 디자인을 통제합니다.
    색·글자크기·폰트를 바꾸려면 아래 :root 값만 고치세요 → 전 페이지 일괄 반영.
@@ -22,8 +25,8 @@
   --header-bg:rgba(255,255,255,.96);
 
   /* ---- 글자 ----------------------------------------------------------- */
-  --font-sans:'Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
-  --font-mono:'IBM Plex Mono','Pretendard',ui-monospace,Consolas,monospace; /* 한글은 Pretendard로 (Plex Mono에 한글 없음 → 굴림 낙하 방지) */
+  --font-sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
+  --font-mono:'IBM Plex Mono','Pretendard Variable','Pretendard',ui-monospace,Consolas,monospace; /* 한글은 Pretendard로 (Plex Mono에 한글 없음 → 굴림 낙하 방지) */
   --fs-body:16px;        /* 본문 */
   --fs-sm:14px;          /* 작은 본문 */
   --fs-meta:13px;        /* 메뉴·메타 */
@@ -207,8 +210,8 @@ h3{font-size:19px;font-weight:700;letter-spacing:-.02em;margin:44px 0 0;color:va
 }
 /* 소제목은 앞 장이 아니라 자기 본문에 붙어야 합니다.
    H2 바로 뒤에 오는 것만 가깝게 당깁니다 (H3 기본값은 44px) */
-.body h2 + h3{margin-top:24px}
-.body h2 + p,.body h2 + ul,.body h2 + ol{margin-top:20px}
+.body h2 + h3{margin-top:38px}
+.body h2 + p,.body h2 + ul,.body h2 + ol{margin-top:32px}
 
 /* 글 속 코드 조각 — 한글이 섞여도 굴림으로 떨어지지 않게 (2026-10-06)
    규칙이 없으면 monospace 기본값(윈도: Courier New)이 되고, 한글 글자가 없어
