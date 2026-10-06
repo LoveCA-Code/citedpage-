@@ -396,6 +396,14 @@ table.cmp th{background:var(--surface-2);font-weight:600}
 .tldr ol{margin:0;padding-left:20px;font-size:var(--fs-body);color:var(--text-2);line-height:1.75}
 .tldr li{margin:0 0 10px}
 .tldr li strong,.tldr li b{color:var(--text-body)}
+/* 맨 끝 마무리 칸 (2026-10-06). 맨 위 요약과 같은 꼴이면 다 읽고 또 요약을 보는 느낌이
+   들어서, 바탕을 깔고 떼어 놓는다. 들어가기 전에 읽는 것과 나오면서 읽는 것은 다르다 */
+.tldr.wrapup{margin:64px 0 0;background:var(--surface-2);border-left:3px solid var(--ink);
+  padding:22px 24px 10px;border-radius:0 8px 8px 0}
+.tldr.wrapup .label{color:var(--ink)}
+.tldr.wrapup p{margin:0 0 12px;font-size:var(--fs-body);color:var(--text-body);
+  line-height:1.75;word-break:keep-all}
+.tldr.wrapup p:last-child{margin-bottom:12px}
 .chk{background:var(--surface-2);border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 6px 6px 0}
 .chk p{margin:6px 0}
 .box.done p{color:var(--text-2)}
